@@ -97,3 +97,30 @@ pdflatex protokoll.tex && biber protokoll && pdflatex protokoll.tex && pdflatex 
   Konflikte in `Praeambel.tex` bitte im Team besprechen.
 - Bilder mit aussagekräftigen Dateinamen in `Bilder/` ablegen.
 - Paket-Vorschläge und nützliche Befehle: in `info.txt` eintragen.
+
+## Fehler "Please clean your repository working tree before checkout" vermeiden
+
+Der Fehler tritt auf, wenn beim Branch-Wechsel/Checkout uncommittete
+Änderungen im Klon liegen, die Git nicht überschreiben darf. Vorbeugen:
+
+1. **Häufig committen** — am besten nach jedem bearbeiteten Kapitel:
+   ```bash
+   git add -A && git commit -m "Kapitel X aktualisiert"
+   git push
+   ```
+2. **Vor dem Branch-Wechsel/pull Status prüfen:** `git status` — wenn
+   Dateien unter "Changes not staged" auftauchen: committen oder stashen.
+3. **Mal schnell parken statt verlieren:**
+   ```bash
+   git stash        # Änderungen parken
+   git pull         # aktualisieren
+   git stash pop    # Änderungen zurückholen
+   ```
+4. **Build-Artefakte nie einchecken:** `.aux`, `.log`, `.pdf` etc. sind
+   bereits in `.gitignore` — sie sollten bei `git status` nie als
+   "untracked" auftauchen. Falls doch: `git clean -fdX` entfernt sie
+   (Vorsicht: löscht alle ignorierten Dateien, auch gebaute PDFs).
+5. **LaTeX-Editor-Automatik:** Falls VS Code beim Speichern automatisch
+   buildet und dabei Dateien anlegt, die Git stören: die `.latexmkrc`
+   im Protokoll-Ordner hält den Build im Ordner, und `.gitignore`
+   fängt die Artefakte ab.
