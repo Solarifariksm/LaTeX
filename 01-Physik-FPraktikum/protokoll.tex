@@ -1,66 +1,58 @@
 % =====================================================
 %  Muster-Protokoll: Physik F-Praktikum (Universität Kassel)
 %  Struktur gemäß "Anleitung zum Schreiben eines Protokolls"
-%  (siehe Anleitung-Protokoll.pdf im Repo-Root)
 %  Kompilieren: latexmk -pdf protokoll.tex
 % =====================================================
-\documentclass[11pt, a4paper, headings=small]{scrartcl}
+\documentclass[a4paper, 12pt]{article} %Setzt die Art des Dokumentes fest.
 
-\input{../../Praeambel.tex}
+\input{../../Praeambel.tex} %Der Übersichthalber werden alle Pakete aus der zentralen Praeambel geladen
 
 % Versuchsspezifische Angaben (pro Protokoll anpassen)
 \newcommand{\Versuchsnummer}{M1}
 \newcommand{\Versuchstitel}{Musterversuch mit aussagekräftigem Titel}
 \newcommand{\Durchfuehrungsdatum}{01.01.2025}
 
-\begin{document}
+\begin{document} %Ab hier beginnt der Spaß
 
-% ---------- Deckblatt (Abschnitt 1.1 der Anleitung) ----------
-\begin{titlepage}
-  \centering
-  \vspace*{2cm}
-  {\LARGE\bfseries Physik-Fortgeschrittenenpraktikum\par}
-  \vspace{0.5cm}
-  {\large Universität Kassel\par}
-  \vspace{2cm}
-  {\huge\bfseries Versuch \Versuchsnummer\par}
-  \vspace{0.3cm}
-  {\Large \Versuchstitel\par}
-  \vspace{3cm}
-  {\large
-  Person A \href{mailto:personA@student.uni-kassel.de}{personA@student.uni-kassel.de}\par
-  \vspace{0.2cm}
-  Person B \href{mailto:personB@student.uni-kassel.de}{personB@student.uni-kassel.de}\par
-  \vspace{0.2cm}
-  Person C \href{mailto:personC@student.uni-kassel.de}{personC@student.uni-kassel.de}\par}
-  \vfill
-  {\large Datum der Durchführung: \Durchfuehrungsdatum\par}
-  \vspace{1cm}
-\end{titlepage}
+% ---------- Titelseite ----------
+\input{Inhaltliches/Titelseite} %Der Übersichthalber wird die Titelseite in einer extra Datei erstellt
 
-% ---------- Inhaltsverzeichnis (separate Seite) ----------
-\tableofcontents
-\clearpage
+% Römische Seitenzahlen für das Inhaltsverzeichnis und co.
+\pagenumbering{Roman}
 
-% ---------- Theoretische Grundlagen (max. 2 Seiten!) ----------
-\input{Inhaltliches/theorie}
+\thispagestyle{plain} %Entfernt Kopfzeile (bzw. setzt die Seite auf LaTeX-Standard zurück)
+\tableofcontents %Fügt Inhaltsverzeichnis ein, jede Sektion wird automatisch hinzugefügt.
 
-% ---------- Experimentelles ----------
-\input{Inhaltliches/experimentelles}
+\newpage
+\thispagestyle{plain}
+\listoffigures %Fügt Abbildungsverzeichnis ein
 
-% ---------- Ergebnisse ----------
-\input{Inhaltliches/ergebnisse}
+\clearpage %Benötigt, um fortan mit Zahlen zu nummerieren, sonst würde der Befehl in der nächsten Zeile den vorherigen Numerierungsstyle überschreiben
+\pagenumbering{arabic} %Ab der Einleitung wird die Seitenanzahl in (arabischen) Zahlen angegeben
 
-% ---------- Zusammenfassung und Diskussion ----------
-\input{Inhaltliches/zusammenfassung_diskussion}
+% ---------- Kapitel ----------
+\newpage
+\input{Inhaltliches/Einleitung} %Der Übersichthalber wird die Einleitung in einer extra Datei geschrieben
 
-% ---------- Literatur ----------
-\input{Inhaltliches/literatur}
+\input{Inhaltliches/Grundlagen} %Der Übersichthalber werden die Grundlagen in einer extra Datei geschrieben
 
-\printbibliography
+\newpage
+\input{Inhaltliches/Versuchsdurchfuehrung} %Der Übersichthalber wird die Versuchsdurchführung in einer extra Datei geschrieben
 
-% ---------- Anhang ----------
-\appendix
-\input{Inhaltliches/anhang}
+\newpage
+\input{Inhaltliches/Auswertung} %Der Übersichthalber wird die Auswertung in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Diskussion} %Der Übersichthalber wird die Diskussion in einer extra Datei geschrieben
+
+\input{Inhaltliches/Zusammenfassung} %Der Übersichthalber wird die Zusammenfassung in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Literatur} %Der Übersichthalber wird die Literaturangabe in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Anhang} %Der Übersichthalber wird der Anhang in einer extra Datei geschrieben
+
+\printbibliography %Literaturverzeichnis aus literatur.bib
 
 \end{document}

@@ -1,0 +1,24 @@
+% =====================================================================
+%  ANHANG  (Abschnitt 1.6 der Anleitung)
+%  Messprotokoll vom Versuchstag, Code der Auswertung,
+%  bei Zweitabgabe korrigierte Versionen.
+% =====================================================================
+\section{Anhang}
+\label{cap:Anhang}
+
+\subsection{Messprotokoll}
+Hier das handschriftliche Messprotokoll vom Versuchstag einfügen (Scan/Foto):
+%\includepdf[pages=-]{Bilder/messprotokoll.pdf}
+
+\subsection{Code der Auswertung}
+Hier der Python-Code der Auswertung:
+\begin{lstlisting}[language=Python, caption={Code: Auswertung der Messdaten}]
+# -*- coding: utf-8 -*-
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.array([1.0, 2.0, 3.0, 4.0])
+s = np.array([2.1, 4.3, 6.2, 8.5])
+
+m, b = np.polyfit(t, s, 1)  # lineare Regression
+\end{lstlisting}

@@ -1,88 +1,117 @@
 % =====================================================================
 %  Zentrale Präambel für alle Protokolle (Physik F-Praktikum, Synthesechemie)
-%  Eingebunden in jedem Protokoll via: \input{Praeambel.tex}
-%  Pfad in den Unterordnern: \input{../../Praeambel.tex}
+%  Eingebunden in jedem Protokoll via: \input{../../Praeambel.tex}
+%  (in den Protokoll-Ordnern, da die Praeambel im Repo-Root liegt)
 % =====================================================================
 
-% ---------- Dokumentklassen-Einstellungen ----------
-\usepackage[
-	left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm,
-]{geometry}
-
 % ---------- Kodierung & Sprache ----------
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} % bei LuaLaTeX entfallen
-\usepackage[ngerman]{babel}
-\usepackage{lmodern}
-\usepackage{microtype}
-\definecolor{darkgray}{gray}{0.25}
+\usepackage[utf8]{inputenc} %Um verschiedene Eingabecodierungen zu unterstützen, z.B. UTF-8
+\usepackage{fontenc} %Zum Einstellen der Ausgabezeichenkodierung (T1)
+\usepackage[ngerman]{babel} %Setzt Sprache auf Deutsch
+\usepackage{lmodern} %Vektorisierte Standardschrift, scharf auch im PDF
+\usepackage{microtype} %Verbessert die Mikrotypografie (Zeichenabstand, Ränder): ästhetischeres Textbild
+\usepackage[T1]{sourcesanspro} %Lädt die Source Sans Pro Schriftart, eine moderne serifenlose Schriftart
+\usepackage{textcomp} %Für zusätzliche Symbole
+\usepackage{csquotes} %Typografisch korrekte Anführungszeichen: \enquote{...}
+\usepackage{xcolor} %Um Farben (auch Code) darzustellen
 
-% ---------- Mathematik ----------
-\usepackage{amsmath, amssymb, amsfonts, mathtools}
-\usepackage{bm}              % fette Mathe-Symbole: \bm{\alpha}
-\usepackage{physics}         % \dv, \pdv, \abs, \norm, \bra, \ket, \commutator
-\usepackage{siunitx}         % Einheiten: \si{\km\per\hour}, \SI{9.81}{\meter\per\square\second}
+% ---------- Seitenlayout ----------
+\usepackage{geometry} %Für die Anpassung der Seitenränder und des Seitenlayouts
+\geometry{
+  top=4cm,
+  bottom=3cm,
+  left=3cm,
+  right=3cm,
+  headheight=15pt,
+  headsep=30pt,
+  footskip=20pt
+}
 
-% ---------- Grafik & Tabellen ----------
-\usepackage{graphicx}
-\graphicspath{{Bilder/}{../Bilder/}}
-\usepackage{booktabs}        % schöne Tabellen: \toprule, \midrule, \bottomrule
-\usepackage{multirow}
-\usepackage{caption}
-\usepackage{subcaption}     % Teilbilder: (a), (b), ...
-\usepackage{float}           % [H] Platzierung erzwingen
-\usepackage{xcolor}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta, calc, positioning, decorations.pathreplacing}
+% ---------- Pakete für Physik ----------
+\usepackage{amsmath} %Mathematische Erweiterung
+\usepackage{amssymb} %Weitere mathematische Zeichen
+\usepackage{amsfonts} %Weitere mathematische Schriftarten
+\usepackage{amsthm} %Für Beweise und Sätze/Definitionen
+\usepackage{mathtools} %Weitergehende Mathe-Werkzeuge
+\usepackage{physics} %Zum Einsetzen von physikalischen Einheiten und Operatoren (\abs, \dv, \bra, \ket, ...)
+\usepackage{esvect} %Um Vektoren besser darzustellen als mit \vec{}: \vv{} (funktioniert nicht in Captions)
+\usepackage{siunitx} %SI-Einheitensystem, z.B. \SI{9.81}{\meter\per\square\second}
+\usepackage{bm} %Fette Mathe-Symbole: \bm{\alpha}
 
-% ---------- Chemie ----------
-\usepackage[version=4]{mhchem}   % \ce{H2O}, \ce{2H2 + O2 -> 2H2O}
-\usepackage{chemfig}             % Strukturformeln: \chemfig{H-C(-[2]OH)(-[4]H)-H}
-\usepackage{chemmacros}          % Reaktionstypen, Apparat-Umgebung: \begin{reaction}
-\usechemmodule{all}
-\usepackage{bpchem}              % chemische Nomenklatur-Referenzen
-\usepackage{modiagram}           % Molekülorbital-Diagramme (optional)
+% ---------- Pakete für Grafiken und Tabellen ----------
+% Für Tabellen
+\usepackage{booktabs} %Für schönere Tabellen: \toprule, \midrule, \bottomrule
+\usepackage{array} %Für erweiterte Tabellenoptionen
+\usepackage{tabularx} %Für Tabellen mit variabler Breite
+\usepackage{longtable} %Für mehrseitige Tabellen
+\usepackage{multirow} %Für Zellen über mehrere Zeilen
 
-% ---------- Naturwissenschaftliche Extras ----------
-\usepackage{isotope}         % Isotope: \isotope{14}, \isotope[14]{C}
-\usepackage{pgfplots}        % Plots direkt in LaTeX
+% Für Grafiken
+\usepackage{graphicx} %Zur Darstellung von Bildern und Grafiken
+\graphicspath{{Bilder/}{../Bilder/}} %Suchpfad für Bilddateien
+\usepackage{eso-pic} %Um Bilder im Hintergrund darzustellen
+\usepackage{float} %Für exakte Platzierung mit [H]
+\usepackage{caption} %Zur Darstellung von Überschriften (Captions)
+\usepackage{wrapfig} %Ermöglicht es, Text um Bilder herum zu schreiben
+\usepackage{subcaption} %Um Bilder nebeneinander darzustellen mit individuellen Unterschriften
+\usepackage[export]{adjustbox} %Um Bilder zu positionieren
+\usepackage{tikz} %Zum Selbsterstellen von Grafiken
+\usetikzlibrary{shapes, positioning, arrows.meta, calc, graphs, graphs.standard} %Erweiterte TikZ-Bausteine
+\usepackage{pgfplots} %Zum Erstellen von Plots direkt in LaTeX
 \pgfplotsset{compat=1.18}
 
-% ---------- Fehlerrechnung / Statistik ----------
-% Eigene Befehle für Unsicherheiten und Fehlerfortpflanzung siehe unten.
+% ---------- Pakete für Chemie (nur bei Bedarf aktiv lassen) ----------
+\usepackage[version=4]{mhchem} %Chemische Formeln: \ce{H2O}, \ce{2H2 + O2 -> 2H2O}
+\usepackage{chemfig} %Strukturformeln: \chemfig{H-C(-[2]OH)(-[4]H)-H}
+\usepackage{chemmacros} %Reaktionsumgebungen: \begin{reaction} ... \end{reaction}
+\usechemmodule{all}
+\usepackage{isotope} %Isotope: \isotope[14]{C}
 
-% ---------- Literatur ----------
-\usepackage[backend=biber, style=authoryear]{biblatex}
-\addbibresource{literatur.bib}
+% ---------- Pakete für Verweise, Zitate und Quellenangaben ----------
+\usepackage[colorlinks=true, allcolors=black]{hyperref} %Für Hyperlinks innerhalb des Dokumentes; alle Links schwarz, damit die kompilierte Datei besser aussieht
+\usepackage{cleveref} %Für intelligentere Referenzierungen von Gleichungen, Abbildungen, Tabellen
+\usepackage[backend=biber, style=authoryear]{biblatex} %Literaturverwaltung mit biber
+\addbibresource{literatur.bib} %Literaturdatenbank im Protokoll-Ordner
 
-% ---------- Optik & Komfort ("schönere" Protokolle) ----------
-\usepackage{enumitem}        % kompakte, konfigurierbare Listen:
-                             % \begin{itemize}[noitemsep, label=\textbullet]
-\setlist{itemsep=2pt, topsep=4pt} % engere, aufgeräumte Listen
-\usepackage{csquotes}        % typografisch korrekte Anführungszeichen: \enquote{...}
-\usepackage{wrapfig}         % Textumlauf um kleine Abbildungen:
-                             % \begin{wrapfigure}{r}{0.4\textwidth}
-\usepackage{tabularx}        % Tabellen über volle Textbreite:
-                             % \begin{tabularx}{\textwidth}{XX}
-\usepackage{longtable}       % Tabellen mit Seitenumbruch (lange Messreihen)
-\usepackage{pdfpages}        % PDFs einbinden (Scans im Anhang):
-                             % \includepdf[pages=-]{messprotokoll.pdf}
-\usepackage{todonotes}       % bunte Notizen am Rand: \todo{Noch messen!}
-\captionsetup{font=small, labelfont=bf} % kleine Captions, fette Nummer
+% ---------- Pakete zur Struktur ----------
+\usepackage{multicol} %Ermöglicht mehrspaltige Textbereiche
+\usepackage{fancyhdr} %Für Kopf- und Fußzeilen
+\usepackage{titling} %Anpassung von Titel(seiten)
+\usepackage{enumitem} %Kompakte, konfigurierbare Listen
+\setlist{itemsep=2pt, topsep=4pt} %Engere, aufgeräumte Listen
+\usepackage{pdfpages} %Zum Einfügen externer PDFs (z.B. Scans im Anhang)
+\usepackage{comment} %Für auskommentierte Notizen: \begin{comment} ... \end{comment}
 
-% ---------- Verweise & PDF-Metadaten ----------
-\usepackage[unicode, colorlinks=true, linkcolor=darkgray,
-            citecolor=darkgray, urlcolor=darkgray]{hyperref}
-\usepackage{cleveref}        % \cref{fig:...} statt \ref{...}
+% ---------- Pakete für Code im Anhang ----------
+\usepackage{listings} %Für möglichen Code in den Anhang
+\usepackage{mdframed} %Ermöglicht das Erstellen von Rahmen um Text oder andere Inhalte
 
-% ---------- Kopf-/Fußzeilen (KOMA) ----------
-\usepackage[automark]{scrlayer-scrpage}
-\clearpairofpagestyles
-\ohead{\pagemark}
-\ihead{Protokoll}
-\KOMAoption{headsepline}{0.4pt}   % dezente Trennlinie unter der Kopfzeile
-% Absatzlayout: halber Abstand statt Einrückung (moderneres Bild)
-\KOMAoption{parskip}{half}
+% Darstellung des Codes im Anhang
+\lstset{
+    backgroundcolor=\color{white},
+    basicstyle=\footnotesize\ttfamily,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{gray},
+    frame=single,
+    keywordstyle=\color{blue},
+    language=Python,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    stringstyle=\color{red},
+}
+
+% ---------- Kopf- und Fußzeilen (fancyhdr) ----------
+\pagestyle{fancy}
+\fancyhf{} %Alle Kopf- und Fußzeilenfelder leeren
+\setlength{\headheight}{15.04742pt} %Länge der Kopfzeile festlegen
+\addtolength{\topmargin}{-0.04762pt} %Abstand oberer Rand zur Kopfzeile wird verringert
+\addtolength{\footskip}{-2.49998pt} %Abstand unterer Rand zur Fußzeile wird verringert
+\fancyhead[L]{\rightmark} %Links: aktueller Abschnitt
+\fancyhead[R]{\leftmark} %Rechts: aktuelles Kapitel
+\fancyfoot[C]{\thepage} %Mitte Fußzeile: Seitenzahl
 
 % ---------- Eigene Befehle ----------
 % Unsicherheit: \errval{12.3}{0.4} -> (12.3 ± 0.4)

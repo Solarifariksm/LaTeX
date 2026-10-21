@@ -2,53 +2,53 @@
 %  Muster-Protokoll: Synthesechemie-Praktikum
 %  Kompilieren: latexmk -pdf protokoll.tex
 % =====================================================
-\documentclass[11pt, a4paper, headings=small]{scrartcl}
+\documentclass[a4paper, 12pt]{article} %Setzt die Art des Dokumentes fest.
 
-\input{../../Praeambel.tex}
+\input{../../Praeambel.tex} %Der Übersichthalber werden alle Pakete aus der zentralen Praeambel geladen
 
-\begin{document}
+% Versuchsspezifische Angaben (pro Protokoll anpassen)
+\newcommand{\Versuchsnummer}{S1}
+\newcommand{\Versuchstitel}{Synthese von 2-Methyl-2-butanol (Markovnikov-Addition)}
+\newcommand{\Durchfuehrungsdatum}{01.01.2025}
 
-% ---------- Deckblatt (separate Seite) ----------
-\begin{titlepage}
-  \centering
-  \vspace*{2cm}
-  {\LARGE\bfseries Praktikum Synthesechemie\par}
-  \vspace{0.5cm}
-  {\large Universit\"at Kassel\par}
-  \vspace{2cm}
-  {\huge\bfseries Versuch S1\par}
-  \vspace{0.3cm}
-  {\Large Synthese von 2-Methyl-2-butanol (Markovnikov-Addition)\par}
-  \vspace{3cm}
-  {\large
-  Person A \href{mailto:personA@student.uni-kassel.de}{personA@student.uni-kassel.de}\par
-  \vspace{0.2cm}
-  Person B \href{mailto:personB@student.uni-kassel.de}{personB@student.uni-kassel.de}\par
-  \vspace{0.2cm}
-  Person C \href{mailto:personC@student.uni-kassel.de}{personC@student.uni-kassel.de}\par}
-  \vfill
-  {\large Datum der Durchf\"uhrung: 01.01.2025\par}
-  \vspace{1cm}
-\end{titlepage}
+\begin{document} %Ab hier beginnt der Spaß
 
-% ---------- Kurzzusammenfassung (Abstract, eigene Seite) ----------
-\begin{abstract}
-Kurze Zusammenfassung: Ansatz, Reaktionsweg (z. B. \ce{C5H10 -> C5H12O}),
-Ausbeute, Reinheit (Schmelzpunkt, DC, NMR) und zentrale Erkenntnisse.
-\end{abstract}
+% ---------- Titelseite ----------
+\input{Inhaltliches/Titelseite} %Der Übersichthalber wird die Titelseite in einer extra Datei erstellt
 
-% ---------- Inhaltsverzeichnis (separate Seite) ----------
-\tableofcontents
-\clearpage
+% Römische Seitenzahlen für das Inhaltsverzeichnis und co.
+\pagenumbering{Roman}
+
+\thispagestyle{plain} %Entfernt Kopfzeile (bzw. setzt die Seite auf LaTeX-Standard zurück)
+\tableofcontents %Fügt Inhaltsverzeichnis ein, jede Sektion wird automatisch hinzugefügt.
+
+\newpage
+\thispagestyle{plain}
+\listoffigures %Fügt Abbildungsverzeichnis ein
+
+\clearpage %Benötigt, um fortan mit Zahlen zu nummerieren
+\pagenumbering{arabic} %Ab hier arabische Seitenzahlen
 
 % ---------- Kapitel ----------
-\input{Inhaltliches/target_reaction}
-\input{Inhaltliches/mechanismus}
-\input{Inhaltliches/durchfuehrung}
-\input{Inhaltliches/ergebnisse}
-\input{Inhaltliches/diskussion}
-\input{Inhaltliches/literatur}
+\newpage
+\input{Inhaltliches/Ziel_Reaktion} %Ziel und Reaktionsübersicht
 
-\printbibliography
+\input{Inhaltliches/Mechanismus} %Reaktionsmechanismus
+
+\newpage
+\input{Inhaltliches/Durchfuehrung} %Durchführung, Apparatur, Sicherheit
+
+\newpage
+\input{Inhaltliches/Ergebnisse} %Ausbeute, Identifikation, Reinheit
+
+\newpage
+\input{Inhaltliches/Diskussion} %Diskussion der Ergebnisse
+
+\input{Inhaltliches/Literatur} %Literaturangaben
+
+\newpage
+\input{Inhaltliches/Anhang} %Messprotokoll, Spektren, Code
+
+\printbibliography %Literaturverzeichnis aus literatur.bib
 
 \end{document}
