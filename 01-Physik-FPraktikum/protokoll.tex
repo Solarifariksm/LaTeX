@@ -1,36 +1,58 @@
 % =====================================================
-%  Muster-Protokoll: Physik F-Praktikum
+%  Muster-Protokoll: Physik F-Praktikum (Universität Kassel)
+%  Struktur gemäß "Anleitung zum Schreiben eines Protokolls"
 %  Kompilieren: latexmk -pdf protokoll.tex
 % =====================================================
-\documentclass[11pt, a4paper, headings=small]{scrartcl}
+\documentclass[a4paper, 12pt]{article} %Setzt die Art des Dokumentes fest.
 
-\input{../Praeambel.tex}
+\input{../Praeambel.tex} %Der Übersichthalber werden alle Pakete aus der zentralen Praeambel geladen
 
-\begin{document}
+% Versuchsspezifische Angaben (pro Protokoll anpassen)
+\newcommand{\Versuchsnummer}{M1}
+\newcommand{\Versuchstitel}{Musterversuch mit aussagekräftigem Titel}
+\newcommand{\Durchfuehrungsdatum}{01.01.2025}
 
-% ---------- Titelblatt ----------
-\titlehead{Physik F-Praktikum -- Musterprotokoll}
-\subject{Fortgeschrittenenpraktikum}
-\title{Versuch M1: Musterversuch mit aussagekräftigem Titel}
-\author{Simon Fuhrmann \and Jonathan Wöbke \and Person C}
-\date{\today}
-\maketitle
+\begin{document} %Ab hier beginnt der Spaß
 
-\begin{abstract}
-Kurze Zusammenfassung: Ziel des Versuchs, wesentliche Methodik,
-zentrales Ergebnis mit Unsicherheit und Schlussfolgerung.
-\end{abstract}
+% ---------- Titelseite ----------
+\input{Inhaltliches/Titelseite} %Der Übersichthalber wird die Titelseite in einer extra Datei erstellt
 
-\tableofcontents
+% Römische Seitenzahlen für das Inhaltsverzeichnis und co.
+\pagenumbering{Roman}
+
+\thispagestyle{plain} %Entfernt Kopfzeile (bzw. setzt die Seite auf LaTeX-Standard zurück)
+\tableofcontents %Fügt Inhaltsverzeichnis ein, jede Sektion wird automatisch hinzugefügt.
+
+\newpage
+\thispagestyle{plain}
+\listoffigures %Fügt Abbildungsverzeichnis ein
+
+\clearpage %Benötigt, um fortan mit Zahlen zu nummerieren, sonst würde der Befehl in der nächsten Zeile den vorherigen Numerierungsstyle überschreiben
+\pagenumbering{arabic} %Ab der Einleitung wird die Seitenanzahl in Zahlen angegeben
 
 % ---------- Kapitel ----------
-\input{Inhaltliches/einleitung}
-\input{Inhaltliches/theorie}
-\input{Inhaltliches/aufbau_durchfuehrung}
-\input{Inhaltliches/auswertung}
-\input{Inhaltliches/diskussion}
-\input{Inhaltliches/literatur}
+\newpage
+\input{Inhaltliches/Einleitung} %Der Übersichthalber wird die Einleitung in einer extra Datei geschrieben
 
-\printbibliography
+\input{Inhaltliches/Grundlagen} %Der Übersichthalber werden die Grundlagen in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Versuchsdurchfuehrung} %Der Übersichthalber wird die Versuchsdurchführung in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Auswertung} %Der Übersichthalber wird die Auswertung in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Diskussion} %Der Übersichthalber wird die Diskussion in einer extra Datei geschrieben
+
+\input{Inhaltliches/Zusammenfassung} %Der Übersichthalber wird die Zusammenfassung in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Literatur} %Der Übersichthalber wird die Literaturangabe in einer extra Datei geschrieben
+
+\newpage
+\input{Inhaltliches/Anhang} %Der Übersichthalber wird der Anhang in einer extra Datei geschrieben
+
+\printbibliography %Literaturverzeichnis aus literatur.bib
 
 \end{document}
