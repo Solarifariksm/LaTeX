@@ -36,6 +36,45 @@ die Kernregeln sind in `info.txt` (Abschnitt 7) zusammengefasst. Kurz:
 - Literaturwerte nur aus Fachliteratur (keine Internetquellen),
   ein einheitlicher Zitierstil
 
+## Die zentrale Praeambel einrichten
+
+Die `Praeambel.tex` liegt im Repo-Root und wird von **jedem** Protokoll
+zentral eingebunden. So richtest du sie ein bzw. verwendest sie:
+
+1. **Einbinden im Protokoll:** In der Hauptdatei (`protokoll.tex`) direkt nach
+   `\documentclass` eine Zeile ergänzen — da die Protokolle in Unterordnern
+   liegen, mit relativem Pfad nach oben:
+   ```latex
+   \documentclass[11pt, a4paper, headings=small]{scrartcl}
+   \input{../../Praeambel.tex}   % zwei Ebenen nach oben zum Repo-Root
+   ```
+2. **Neues Protokoll auf gleicher Ebene** (z. B. `03-…/`): derselbe Befehl
+   `\input{../../Praeambel.tex}` funktioniert unverändert.
+3. **Eigene Anpassungen:** Paket-Optionen und neue Pakete bitte **nur zentral**
+   in `Praeambel.tex` ergänzen (nie in einzelnen Protokollen), damit alle
+   Protokelle einheitlich aussehen und es keine Doppel-Ladungen gibt.
+   Verschiedene Paket-Kategorien sind dort per Kommentarblöcken gegliedert
+   (Mathematik, Chemie, Grafik, Optik, eigene Befehle …).
+4. **Lokales Testen ohne Repo-Struktur:** Wenn du ein Protokoll-Verzeichnis
+   allein kompilierst, funktioniert `\input{../../Praeambel.tex}` nur, wenn
+   der Ordner zwei Ebenen unter dem Repo-Root liegt. Am einfachsten immer
+   das komplette Repo klonen und darin arbeiten.
+
+## Enthaltene "Schönheits"-Pakete (Auswahl)
+
+| Paket | Zweck |
+|---|---|
+| `microtype` | bessere Typografie, sauberere Ränder |
+| `enumitem` + `\setlist` | kompakte, aufgeräumte Listen |
+| `caption`-Setup | kleine Captions mit fetter Nummer |
+| `scrlayer-scrpage` | Kopfzeile mit Seitenzahl + Trennlinie, `parskip=half` |
+| `csquotes` | typografisch korrekte Anführungszeichen (`\enquote{}`) |
+| `wrapfig` | Textumlauf um kleine Abbildungen |
+| `tabularx` / `longtable` | breite Tabellen / Tabellen über Seitengrenzen |
+| `pdfpages` | gescannte Messprotokolle im Anhang einfügen |
+| `todonotes` | offene Aufgaben im Text markieren (`\todo{}`) |
+| `hyperref` (colorlinks) | klickbare Verweise in dezentem Dunkelgrau |
+
 ## Neues Protokoll anlegen
 
 1. Einen der Musterordner kopieren, z. B. `03-Physik-Versuch-YZ/`.

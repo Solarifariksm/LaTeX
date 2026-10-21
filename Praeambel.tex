@@ -15,6 +15,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{lmodern}
 \usepackage{microtype}
+\definecolor{darkgray}{gray}{0.25}
 
 % ---------- Mathematik ----------
 \usepackage{amsmath, amssymb, amsfonts, mathtools}
@@ -54,8 +55,24 @@
 \usepackage[backend=biber, style=authoryear]{biblatex}
 \addbibresource{literatur.bib}
 
+% ---------- Optik & Komfort ("schönere" Protokolle) ----------
+\usepackage{enumitem}        % kompakte, konfigurierbare Listen:
+                             % \begin{itemize}[noitemsep, label=\textbullet]
+\setlist{itemsep=2pt, topsep=4pt} % engere, aufgeräumte Listen
+\usepackage{csquotes}        % typografisch korrekte Anführungszeichen: \enquote{...}
+\usepackage{wrapfig}         % Textumlauf um kleine Abbildungen:
+                             % \begin{wrapfigure}{r}{0.4\textwidth}
+\usepackage{tabularx}        % Tabellen über volle Textbreite:
+                             % \begin{tabularx}{\textwidth}{XX}
+\usepackage{longtable}       % Tabellen mit Seitenumbruch (lange Messreihen)
+\usepackage{pdfpages}        % PDFs einbinden (Scans im Anhang):
+                             % \includepdf[pages=-]{messprotokoll.pdf}
+\usepackage{todonotes}       % bunte Notizen am Rand: \todo{Noch messen!}
+\captionsetup{font=small, labelfont=bf} % kleine Captions, fette Nummer
+
 % ---------- Verweise & PDF-Metadaten ----------
-\usepackage[hidelinks]{hyperref}
+\usepackage[unicode, colorlinks=true, linkcolor=darkgray,
+            citecolor=darkgray, urlcolor=darkgray]{hyperref}
 \usepackage{cleveref}        % \cref{fig:...} statt \ref{...}
 
 % ---------- Kopf-/Fußzeilen (KOMA) ----------
@@ -63,6 +80,9 @@
 \clearpairofpagestyles
 \ohead{\pagemark}
 \ihead{Protokoll}
+\KOMAoption{headsepline}{0.4pt}   % dezente Trennlinie unter der Kopfzeile
+% Absatzlayout: halber Abstand statt Einrückung (moderneres Bild)
+\KOMAoption{parskip}{half}
 
 % ---------- Eigene Befehle ----------
 % Unsicherheit: \errval{12.3}{0.4} -> (12.3 ± 0.4)
