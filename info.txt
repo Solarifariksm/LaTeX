@@ -194,7 +194,6 @@ Rechnerordner pro Protokoll (z. B. 01-Physik-Versuch-XY, 02-Chemie-Synthese-AB):
 
   <Protokoll-Ordner>/
       protokoll.tex            Hauptdatei (documentclass, \input der Kapitel)
-      Praeambel-referenz.tex   zeigt via Symlink/\\input auf ../../Praeambel.tex
       literatur.bib            pro Protokoll eigene Bibliographie
       Inhaltliches/            die Kapitel (zur Übersicht, je Versuchsteil eine Datei)
       Bilder/                  Abbildungen, Plots, Scan-Skizzen

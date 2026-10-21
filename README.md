@@ -46,18 +46,18 @@ zentral eingebunden. So richtest du sie ein bzw. verwendest sie:
    liegen, mit relativem Pfad nach oben:
    ```latex
    \documentclass[11pt, a4paper, headings=small]{scrartcl}
-   \input{../../Praeambel.tex}   % zwei Ebenen nach oben zum Repo-Root
+   \input{../Praeambel.tex}   % eine Ebene nach oben zum Repo-Root
    ```
 2. **Neues Protokoll auf gleicher Ebene** (z. B. `03-…/`): derselbe Befehl
-   `\input{../../Praeambel.tex}` funktioniert unverändert.
+   `\input{../Praeambel.tex}` funktioniert unverändert.
 3. **Eigene Anpassungen:** Paket-Optionen und neue Pakete bitte **nur zentral**
    in `Praeambel.tex` ergänzen (nie in einzelnen Protokollen), damit alle
    Protokelle einheitlich aussehen und es keine Doppel-Ladungen gibt.
    Verschiedene Paket-Kategorien sind dort per Kommentarblöcken gegliedert
    (Mathematik, Chemie, Grafik, Optik, eigene Befehle …).
 4. **Lokales Testen ohne Repo-Struktur:** Wenn du ein Protokoll-Verzeichnis
-   allein kompilierst, funktioniert `\input{../../Praeambel.tex}` nur, wenn
-   der Ordner zwei Ebenen unter dem Repo-Root liegt. Am einfachsten immer
+   allein kompilierst, funktioniert `\input{../Praeambel.tex}` nur, wenn
+   der Ordner eine Ebene unter dem Repo-Root liegt. Am einfachsten immer
    das komplette Repo klonen und darin arbeiten.
 
 ## Enthaltene "Schönheits"-Pakete (Auswahl)
@@ -81,7 +81,7 @@ zentral eingebunden. So richtest du sie ein bzw. verwendest sie:
 2. Titel und Autoren in `protokoll.tex` anpassen.
 3. Kapitel in `Inhaltliches/` umbenennen/bearbeiten.
 4. Die zentrale `Praeambel.tex` bleibt unverändert (Fix: `Praeambel.tex` im Hauptverzeichnis).
-   In `protokoll.tex` steht deshalb `\input{../../Praeambel.tex}`.
+   In `protokoll.tex` steht deshalb `\input{../Praeambel.tex}`.
 
 ## Kompilieren
 
