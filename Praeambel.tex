@@ -8,9 +8,15 @@
 \usepackage[utf8]{inputenc} %Um verschiedene Eingabecodierungen zu unterstützen, z.B. UTF-8
 \usepackage{fontenc} %Zum Einstellen der Ausgabezeichenkodierung (T1)
 \usepackage[ngerman]{babel} %Setzt Sprache auf Deutsch
-\usepackage{lmodern} %Vektorisierte Standardschrift, scharf auch im PDF
 \usepackage{microtype} %Verbessert die Mikrotypografie (Zeichenabstand, Ränder): ästhetischeres Textbild
-\usepackage[T1]{sourcesanspro} %Lädt die Source Sans Pro Schriftart, eine moderne serifenlose Schriftart
+% Source Sans Pro Schriftart, eine moderne serifenlose Schriftart.
+% Fällt auf lmodern zurück, wenn das Paket nicht installiert ist
+% (Installation bei Bedarf: sudo tlmgr install sourcesanspro bzw. apt install texlive-fonts-extra)
+\IfFileExists{sourcesanspro.sty}{%
+  \usepackage[T1]{sourcesanspro}%
+}{%
+  \usepackage{lmodern}%Vektorisierte Standardschrift, scharf auch im PDF
+}
 \usepackage{textcomp} %Für zusätzliche Symbole
 \usepackage{csquotes} %Typografisch korrekte Anführungszeichen: \enquote{...}
 \usepackage{xcolor} %Um Farben (auch Code) darzustellen
