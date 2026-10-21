@@ -91,6 +91,24 @@ latexmk -pdf protokoll.tex
 pdflatex protokoll.tex && biber protokoll && pdflatex protokoll.tex && pdflatex protokoll.tex
 ```
 
+### Fehlende Pakete automatisch installieren
+
+Schlägt der Build mit `...sty not found` fehl, einmalig im Protokoll-Ordner:
+
+```bash
+../install-fehlende-pakete.sh protokoll.log   # liest das Log, installiert Fehlendes
+latexmk -pdf protokoll.tex                    # Build wiederholen
+```
+
+Das Skript nutzt `tlmgr`, wenn verfügbar, sonst `apt` mit den passenden
+`texlive-*`-Paketgruppen. MiKTeX-Nutzer: „Install missing packages
+on-the-fly" in den MiKTeX-Optionen aktivieren, dann passiert es automatisch.
+Einmal alles installieren (ca. 5–7 GB, danach nie wieder nachdenken):
+
+```bash
+sudo apt install texlive-full
+```
+
 ## Zusammenarbeit (3 Personen)
 
 - Jede/r arbeitet in einem eigenen Branch oder direkt im eigenen Kapitel,
