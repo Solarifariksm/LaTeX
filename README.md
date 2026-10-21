@@ -8,18 +8,33 @@ Dieses Repo dient der gemeinsamen Erstellung von Praktikumsprotokollen
 ```
 LaTeX/
 ├── Praeambel.tex            zentrale Präambel (Pakete, eigene Befehle) für ALLE Protokolle
-├── info.txt                 nützliche Pakete & Befehle für Physik/Chemie
-├── 01-Physik-FPraktikum/    Muster-Protokoll Physik
-│   ├── protokoll.tex        Hauptdatei
-│   ├── literatur.bib
-│   ├── Inhaltliches/        Kapitel-Dateien (ein Thema pro Datei)
-│   └── Bilder/              Abbildungen
+├── info.txt                 nützliche Pakete & Befehle für Physik/Chemie + Protokoll-Regeln
+├── Anleitung-Protokoll.pdf  offizielle Anleitung „Protokoll“ (Uni Kassel F-Praktikum)
+├── 01-Physik-FPraktikum/    Muster-Protokoll Physik (Struktur gemäß Anleitung)
+│   ├── protokoll.tex        Hauptdatei (Deckblatt, 
+│   ├── literatur.bib        Versuchsnummer/Titel/Datum als Makros)
+│   ├── Inhaltliches/        theorie → experimentelles → ergebnisse →
+│   └── Bilder/               zusammenfassung_diskussion → literatur → anhang
 └── 02-Synthesechemie/       Muster-Protokoll Chemie
     ├── protokoll.tex
     ├── literatur.bib
     ├── Inhaltliches/
     └── Bilder/
 ```
+
+## Wichtig: Protokoll-Regeln der Uni Kassel
+
+Die vollständige Anleitung liegt als `Anleitung-Protokoll.pdf` im Repo-Root;
+die Kernregeln sind in `info.txt` (Abschnitt 7) zusammengefasst. Kurz:
+
+- Aufbau: Deckblatt → Theoretische Grundlagen (max. 2 Seiten) →
+  Experimentelles → Ergebnisse → Zusammenfassung & Diskussion → Anhang
+- Neutrale Erzählperspektive (keine Ich-Form), kurz und prägnant
+- Zu jedem berechneten Wert Fehlerbetrachtung; Fehlerbalken in Plots
+- Wert und Fehler in derselben Einheit und mit derselben Anzahl an
+  Nachkommastellen; Fehler immer aufrunden
+- Literaturwerte nur aus Fachliteratur (keine Internetquellen),
+  ein einheitlicher Zitierstil
 
 ## Neues Protokoll anlegen
 
