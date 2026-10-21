@@ -2,35 +2,62 @@
 %  Muster-Protokoll: Synthesechemie-Praktikum
 %  Kompilieren: latexmk -pdf protokoll.tex
 % =====================================================
-\documentclass[11pt, a4paper, headings=small]{scrartcl}
+\documentclass[a4paper, 12pt]{article} %Setzt die Art des Dokumentes fest.
 
-\input{../Praeambel.tex}
+\input{../Praeambel.tex} %Der Übersichthalber werden alle Pakete aus der zentralen Praeambel geladen
 
-\begin{document}
+% Versuchsspezifische Angaben (pro Protokoll anpassen)
+\newcommand{\Versuchsnummer}{S1}
+\newcommand{\Versuchstitel}{Synthese von 2-Methyl-2-butanol (Markovnikov-Addition)}
+\newcommand{\Durchfuehrungsdatum}{01.01.2025}
 
-% ---------- Titelblatt ----------
-\titlehead{Synthesechemie -- Musterprotokoll}
-\subject{Praktikum Synthesechemie}
-\title{Versuch S1: Synthese von 2-Methyl-2-butanol (Markovnikov-Addition)}
-\author{Simon Fuhrmann \and Jonathan Wöbke \and Person C}
-\date{\today}
-\maketitle
+\begin{document} %Ab hier beginnt der Spaß
 
-\begin{abstract}
-Kurze Zusammenfassung: Ansatz, Reaktionsweg (z. B. \ce{C5H10 -> C5H12O}),
-Ausbeute, Reinheit (Schmelzpunkt, DC, NMR) und zentrale Erkenntnisse.
-\end{abstract}
+% ---------- Titelseite ----------
+\input{Inhaltliches/Titelseite} %Der Übersichthalber wird die Titelseite in einer extra Datei erstellt
 
-\tableofcontents
+% Römische Seitenzahlen für das Inhaltsverzeichnis und co.
+\pagenumbering{Roman}
+
+\thispagestyle{plain} %Entfernt Kopfzeile (bzw. setzt die Seite auf LaTeX-Standard zurück)
+\tableofcontents %Fügt Inhaltsverzeichnis ein, jede Sektion wird automatisch hinzugefügt.
+
+\newpage
+\thispagestyle{plain}
+\listoffigures %Fügt Abbildungsverzeichnis ein
+
+\clearpage %Benötigt, um fortan mit Zahlen zu nummerieren
+\pagenumbering{arabic} %Ab hier arabische Seitenzahlen
 
 % ---------- Kapitel ----------
+<<<<<<< HEAD
 \input{Inhaltliches/Ziel_Reaktion.tex}
 \input{Inhaltliches/Mechanismus.tex}
 \input{Inhaltliches/Durchfuehrung.tex}
 \input{Inhaltliches/Ergebnisse.tex}
 \input{Inhaltliches/Diskussion.tex}
 \input{Inhaltliches/Literatur.tex}
+=======
+\newpage
+\input{Inhaltliches/Ziel_Reaktion} %Ziel und Reaktionsübersicht
+>>>>>>> fc5ab29b21ea261c5ec74e7f05cbe6986ad17f6c
 
-\printbibliography
+\input{Inhaltliches/Mechanismus} %Reaktionsmechanismus
+
+\newpage
+\input{Inhaltliches/Durchfuehrung} %Durchführung, Apparatur, Sicherheit
+
+\newpage
+\input{Inhaltliches/Ergebnisse} %Ausbeute, Identifikation, Reinheit
+
+\newpage
+\input{Inhaltliches/Diskussion} %Diskussion der Ergebnisse
+
+\input{Inhaltliches/Literatur} %Literaturangaben
+
+\newpage
+\input{Inhaltliches/Anhang} %Messprotokoll, Spektren, Code
+
+\printbibliography %Literaturverzeichnis aus literatur.bib
 
 \end{document}
