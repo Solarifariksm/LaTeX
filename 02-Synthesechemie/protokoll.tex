@@ -1,0 +1,36 @@
+% =====================================================
+%  Muster-Protokoll: Synthesechemie-Praktikum
+%  Kompilieren: latexmk -pdf protokoll.tex
+% =====================================================
+\documentclass[11pt, a4paper, headings=small]{scrartcl}
+
+\input{../../Praeambel.tex}
+
+\begin{document}
+
+% ---------- Titelblatt ----------
+\titlehead{Synthesechemie -- Musterprotokoll}
+\subject{Praktikum Synthesechemie}
+\title{Versuch S1: Synthese von 2-Methyl-2-butanol (Markovnikov-Addition)}
+\author{Person A \and Person B \and Person C}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+Kurze Zusammenfassung: Ansatz, Reaktionsweg (z. B. \ce{C5H10 -> C5H12O}),
+Ausbeute, Reinheit (Schmelzpunkt, DC, NMR) und zentrale Erkenntnisse.
+\end{abstract}
+
+\tableofcontents
+
+% ---------- Kapitel ----------
+\input{Inhaltliches/target_reaction}
+\input{Inhaltliches/mechanismus}
+\input{Inhaltliches/durchfuehrung}
+\input{Inhaltliches/ergebnisse}
+\input{Inhaltliches/diskussion}
+\input{Inhaltliches/literatur}
+
+\printbibliography
+
+\end{document}

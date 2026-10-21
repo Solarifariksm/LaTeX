@@ -1,0 +1,159 @@
+================================================================================
+INFO – Nützliche LaTeX-Pakete & Befehle für Physik- und Chemie-Protokolle
+================================================================================
+
+DIESE DATEI WIRD LAUFEND ERGÄNZT – fügt gerne selbst Nützliches hinzu!
+
+--------------------------------------------------------------------------------
+1) CHEMIE – Analyse & Darstellung chemischer Verbindungen
+--------------------------------------------------------------------------------
+
+mhchem (in Präambel: \usepackage[version=4]{mhchem})
+  Chemische Formeln im Fließ- und Mathe-Modus:
+    \ce{H2O}                    ->  H2O
+    \ce{2H2 + O2 -> 2H2O}       ->  Reaktionsgleichungen
+    \ce{SO4^2-}                 ->  Ionen mit Ladungen
+    \ce{^{227}_{90}Th+}         ->  Nuklide (Massen-/Ordnungszahl)
+    \ce{A ->[T][\Delta] B}      ->  Pfeile mit Bedingungen über/unter dem Pfeil
+    \ce{C6H5-NO2}               ->  organische Summenformeln
+
+chemfig (\usepackage{chemfig})
+  Zweidimensionale Strukturformeln:
+    \chemfig{H-C(-[2]OH)(-[4]H)-H}          % Butanol-Skelett
+    \chemfig{*6(=-=-*-)}                    % Benzolring
+    \chemfig{[,0]H_2N-C(=O)-OH}             % gestreckte Darstellung
+  Wichtige Optionen:
+    - Bindungswinkel: \chemfig{A-[1]B}   (0=rechts, 1=45°, 2=oben, ...)
+    - cis/trans-Bindungen: \chemfig{A-[::30]?B}
+    - Substitutionen / Ringe: *6(...), *5(...)
+
+chemmacros (\usepackage{chemmacros}, \usechemmodule{all})
+  Einheiten, Prozesse, Reaktionstypen:
+    \begin{reaction} A + B -> C \end{reaction}   % nummerierte Reaktionen
+    \pH, \pOH, \pKa, \pKb                         % typografisch korrekt
+    \el                                            % Elektronen-Symbol
+    \NewChemPhase                                  % Zustände (s), (l), (g)
+
+bpchem (\usepackage{bpchem})
+  Nomenklatur: \newreaction{ox}{Oxidation} – Reaktions-Nummern referenzierbar
+
+isotope (\usepackage{isotope})
+  \isotope{14}, \isotope[14]{C} – Isotope/Zerfallsreihen sauber setzen
+
+modiagram (\usepackage{modiagram})
+  Molekülorbital-/Orbital-Diagramme, z. B. \modiagram{...}
+
+--------------------------------------------------------------------------------
+2) CHEMIE – Apparaturen (Synthesechemie)
+--------------------------------------------------------------------------------
+
+chemfig + TikZ: Destillations-/Reflux-Apparaturen zeichnen.
+  Fertige Symbolik (Kolben, Kühler): Paket "chemplants" (CTAN) –
+  z. B. \chemname{\chemfig{...}}{Rundkolben}
+  Alternative: "tikz-chemistry", chemische Apparaturen als TikZ-Bausteine.
+
+--------------------------------------------------------------------------------
+3) PHYSIK – Rechnen, Fehlerrechnung, Einheiten
+--------------------------------------------------------------------------------
+
+siunitx (\usepackage{siunitx}) – unentbehrlich!
+  \SI{9.81}{\meter\per\square\second}   % Zahl + Einheit korrekt gesetzt
+  \si{\kilo\gram\per\cubic\meter}       % reine Einheit
+  \SI{3(1)}{\meter}                     % 3±1 direkt in der Klammer!
+  \num{1.23e4}                          % Zahlen formatieren
+  \SIrange{10}{20}{\degreeCelsius}      % Wertebereiche: 10 bis 20 °C
+
+physics (\usepackage{physics})
+  \dv{x}, \dv[2]{f}{x}      % Ableitungen (auch partiell: \pdv)
+  \abs{x}, \norm{v}         % Betrag, Norm
+  \bra{\psi}, \ket{\psi}, \braket{a}{b}   % Dirac-Notation (Quantenmechanik!)
+  \commutator{A}{B}         % Kommutator [A,B]
+
+Fehlerrechnung (in Präambel definiert):
+  \errval{12.3}{0.4}         % (12.3 ± 0.4)
+  \gausserror                % Formelgerüst Gauß'sche Fehlerfortpflanzung
+
+Feynman-Diagramme: \usepackage{feynmp-auto} (MetaPost) oder
+  TikZ-Library "feynman": \tikzfeynmanset{}
+
+--------------------------------------------------------------------------------
+4) GRAFIK & PLOTS
+--------------------------------------------------------------------------------
+
+pgfplots (\usepackage{pgfplots}, \pgfplotsset{compat=1.18})
+  Achsen, Fehlerbalken, Fits – direkt im LaTeX-Code:
+    \begin{axis}[xlabel={t in \si{\second}}, ylabel={s in \si{\meter}}]
+      \addplot+[only marks, error bars/.cd, y dir=both, y explicit]
+        coordinates {(0,0) (1,1.1) (2,2.05)};
+
+tikz + libraries (siehe Präambel)
+  Schaltkreise: \usetikzlibrary{circuits}
+  Optik:        \usetikzlibrary{optics}   (im Paket "tikz-optics")
+
+Für Messdaten-Auswertung: gnuplot (\usepackage{gnuplottex}) oder
+  Python (matplotlib) -> PDF exportieren -> mit \includegraphics einbinden.
+
+--------------------------------------------------------------------------------
+5) TABELLEN, CAPTIONS, LAYOUT
+--------------------------------------------------------------------------------
+
+booktabs  – professionelle Tabellen: \toprule \midrule \bottomrule
+multirow  – mehrzeilige Zellen
+caption   – Caption-Formatierung, z. B. \captionsetup{font=small}
+subcaption – Teilbilder (a), (b) mit eigener Unterschrift
+float     – Abbildungen exakt platzieren mit [H]
+tabularx  – Tabellen mit automatischer Breitenanpassung
+
+KOMA-Script (dokumentklassen scrubook/art, hier: scrreprt):
+  \KOMAoption{captions}{tableheading}
+  \setcapindent{0pt}       % Captions bündig
+
+--------------------------------------------------------------------------------
+6) LITERATUR & VERWEISE
+--------------------------------------------------------------------------------
+
+biblatex + biber (in Präambel konfiguriert):
+  \cite{Author2023}          % Zitate im Text
+  \printbibliography         % Literaturverzeichnis am Ende
+  Literatur.bib im Protokoll-Ordner pflegen.
+
+cleveref – \cref{eq:nernst}, \cref{fig:aufbau} – Referenzen mit
+  automatischer Bezeichnung ("Gl. (3)", "Abb. 4").
+hyperref – klickbare Verweise, [hidelinks] = keine roten Kasten.
+
+--------------------------------------------------------------------------------
+7) SONSTIGES NÜTZLICHES
+--------------------------------------------------------------------------------
+
+microtype     – bessere Typografie (immer laden!)
+todonotes    – \todo{Noch messen!} – bunte Notizen am Rand
+listings     – Code-Schnipsel (z. B. Auswertungs-Skripte) sauber setzen
+minted       – Syntax-Highlighting (benötigt Pygments, -shell-escape)
+xcolor       – eigene Farben: \definecolor{TUgreen}{RGB}{0,122,54}
+wrapfig      – Textumlauf um Abbildungen
+algorithm2e  – Pseudocode / Rechenwege übersichtlich darstellen
+
+Compilieren mit pdfLaTeX, Literatur mit biber:
+  pdflatex protokoll.tex && biber protokoll && pdflatex protokoll.tex && pdflatex protokoll.tex
+  (empfohlen: latexmk -pdf protokoll.tex – automatisiert alles)
+
+--------------------------------------------------------------------------------
+8) STRUKTUR DIESES REPOS
+--------------------------------------------------------------------------------
+
+Rechnerordner pro Protokoll (z. B. 01-Physik-Versuch-XY, 02-Chemie-Synthese-AB):
+
+  <Protokoll-Ordner>/
+      protokoll.tex            Hauptdatei (documentclass, \input der Kapitel)
+      Praeambel-referenz.tex   zeigt via Symlink/\\input auf ../../Praeambel.tex
+      literatur.bib            pro Protokoll eigene Bibliographie
+      Inhaltliches/            die Kapitel (zur Übersicht, je Versuchsteil eine Datei)
+      Bilder/                  Abbildungen, Plots, Scan-Skizzen
+
+  Praeambel.tex (Repo-Root)   zentrale Pakete & eigene Befehle für ALLE Protokolle
+  info.txt                    diese Datei
+
+  Neue Protokolle: Ordner kopieren (z. B. 03-Physik-Versuch-YZ) und
+  Hauptdatei-Inhalt anpassen – Praeambel bleibt zentral.
+
+================================================================================

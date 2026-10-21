@@ -1,0 +1,36 @@
+% =====================================================
+%  Muster-Protokoll: Physik F-Praktikum
+%  Kompilieren: latexmk -pdf protokoll.tex
+% =====================================================
+\documentclass[11pt, a4paper, headings=small]{scrartcl}
+
+\input{../../Praeambel.tex}
+
+\begin{document}
+
+% ---------- Titelblatt ----------
+\titlehead{Physik F-Praktikum -- Musterprotokoll}
+\subject{Fortgeschrittenenpraktikum}
+\title{Versuch M1: Musterversuch mit aussagekräftigem Titel}
+\author{Person A \and Person B \and Person C}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+Kurze Zusammenfassung: Ziel des Versuchs, wesentliche Methodik,
+zentrales Ergebnis mit Unsicherheit und Schlussfolgerung.
+\end{abstract}
+
+\tableofcontents
+
+% ---------- Kapitel ----------
+\input{Inhaltliches/einleitung}
+\input{Inhaltliches/theorie}
+\input{Inhaltliches/aufbau_durchfuehrung}
+\input{Inhaltliches/auswertung}
+\input{Inhaltliches/diskussion}
+\input{Inhaltliches/literatur}
+
+\printbibliography
+
+\end{document}

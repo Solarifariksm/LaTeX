@@ -1,0 +1,77 @@
+% =====================================================================
+%  Zentrale Präambel für alle Protokolle (Physik F-Praktikum, Synthesechemie)
+%  Eingebunden in jedem Protokoll via: \input{Praeambel.tex}
+%  Pfad in den Unterordnern: \input{../../Praeambel.tex}
+% =====================================================================
+
+% ---------- Dokumentklassen-Einstellungen ----------
+\usepackage[
+	left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm,
+]{geometry}
+
+% ---------- Kodierung & Sprache ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % bei LuaLaTeX entfallen
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- Mathematik ----------
+\usepackage{amsmath, amssymb, amsfonts, mathtools}
+\usepackage{bm}              % fette Mathe-Symbole: \bm{\alpha}
+\usepackage{physics}         % \dv, \pdv, \abs, \norm, \bra, \ket, \commutator
+\usepackage{siunitx}         % Einheiten: \si{\km\per\hour}, \SI{9.81}{\meter\per\square\second}
+
+% ---------- Grafik & Tabellen ----------
+\usepackage{graphicx}
+\graphicspath{{Bilder/}{../Bilder/}}
+\usepackage{booktabs}        % schöne Tabellen: \toprule, \midrule, \bottomrule
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}     % Teilbilder: (a), (b), ...
+\usepackage{float}           % [H] Platzierung erzwingen
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning, decorations.pathreplacing}
+
+% ---------- Chemie ----------
+\usepackage[version=4]{mhchem}   % \ce{H2O}, \ce{2H2 + O2 -> 2H2O}
+\usepackage{chemfig}             % Strukturformeln: \chemfig{H-C(-[2]OH)(-[4]H)-H}
+\usepackage{chemmacros}          % Reaktionstypen, Apparat-Umgebung: \begin{reaction}
+\usechemmodule{all}
+\usepackage{bpchem}              % chemische Nomenklatur-Referenzen
+\usepackage{modiagram}           % Molekülorbital-Diagramme (optional)
+
+% ---------- Naturwissenschaftliche Extras ----------
+\usepackage{isotope}         % Isotope: \isotope{14}, \isotope[14]{C}
+\usepackage{pgfplots}        % Plots direkt in LaTeX
+\pgfplotsset{compat=1.18}
+
+% ---------- Fehlerrechnung / Statistik ----------
+% Eigene Befehle für Unsicherheiten und Fehlerfortpflanzung siehe unten.
+
+% ---------- Literatur ----------
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{literatur.bib}
+
+% ---------- Verweise & PDF-Metadaten ----------
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}        % \cref{fig:...} statt \ref{...}
+
+% ---------- Kopf-/Fußzeilen (KOMA) ----------
+\usepackage[automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+\ihead{Protokoll}
+
+% ---------- Eigene Befehle ----------
+% Unsicherheit: \errval{12.3}{0.4} -> (12.3 ± 0.4)
+\newcommand{\errval}[2]{\ensuremath{\left(#1 \pm #2\right)}}
+% Mittelwert mit Standardabweichung
+\newcommand{\meanval}[2]{\ensuremath{\overline{#1} = #2}}
+% Absoluter Fehler einer Größe X
+\newcommand{\derr}[1]{\ensuremath{\Delta #1}}
+% Gauß'sche Fehlerfortpflanzung als Formelgerüst
+\newcommand{\gausserror}{\ensuremath{\Delta y = \sqrt{\sum_i \left(\frac{\partial f}{\partial x_i}\Delta x_i\right)^2}}}
+% Häufige Abkürzungen
+\newcommand{\ds}{\ensuremath{\displaystyle}}
