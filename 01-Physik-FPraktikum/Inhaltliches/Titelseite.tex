@@ -1,22 +1,48 @@
-% ---------- Titelseite (separate Seite) ----------
+% =====================================================================
+%  TITELSEITE (separate Seite)
+%  Edles Layout: feine Linien, klassische Typografie, ruhige Anordnung
+% =====================================================================
 \begin{titlepage}
-    \centering
-    \vspace*{2cm}
-    {\LARGE\bfseries Physik-Fortgeschrittenenpraktikum\par}
-    \vspace{0.5cm}
-    {\large Universität Kassel\par}
-    \vspace{2cm}
-    {\huge\bfseries Versuch \Versuchsnummer\par}
-    \vspace{0.3cm}
-    {\Large \Versuchstitel\par}
-    \vspace{3cm}
-    {\large
-    Simon Fuhrmann \href{mailto:simon.fuhrmann@student.uni-kassel.de}{simon.fuhrmann@student.uni-kassel.de}\par
-    \vspace{0.2cm}
-    Jonathan Wöbke \href{mailto:jonathan.woebke@student.uni-kassel.de}{jonathan.woebke@student.uni-kassel.de}\par
-    \vspace{0.2cm}
-    Person C\\ \href{mailto:personC@student.uni-kassel.de}{personC@student.uni-kassel.de}\par}
-    \vfill
-    {\large Datum der Durchführung: \Durchfuehrungsdatum\par}
-    \vspace{1cm}
+    \begin{center}
+
+        % --- Oberer Bereich: Institution ---
+        \vspace*{1.5cm}
+        {\color{gray}\footnotesize \textsc{Universität Kassel}\\[2pt]
+        \textsc{Institut für Physik}\par}
+        \vspace{0.8cm}
+
+        % --- Feine Zierlinie oben ---
+        {\color{gray}\rule{0.6\textwidth}{0.4pt}}
+
+        % --- Praktikum / Versuchsbezeichnung ---
+        \vspace{1.2cm}
+        {\Large\scshape Physik-Fortgeschrittenenpraktikum\par}
+        \vspace{0.9cm}
+
+        {\color{darkgray}\huge\bfseries Versuch \Versuchsnummer\par}
+        \vspace{0.35cm}
+        {\color{darkgray}\LARGE \Versuchstitel\par}
+
+        % --- Feine Zierlinie unten ---
+        \vspace{1.2cm}
+        {\color{gray}\rule{0.6\textwidth}{0.4pt}}
+
+        % --- Autoren ---
+        \vspace{1.4cm}
+        {\large
+        Simon Fuhrmann\\[2pt]
+        \href{mailto:simon.fuhrmann@student.uni-kassel.de}{simon.fuhrmann@student.uni-kassel.de}\\[10pt]
+        Jonathan Wöbke\\[2pt]
+        \href{mailto:jonathan.woebke@student.uni-kassel.de}{jonathan.woebke@student.uni-kassel.de}\\[10pt]
+        Person C\\[2pt]
+        \href{mailto:personC@student.uni-kassel.de}{personC@student.uni-kassel.de}\par}
+
+        % --- Unterer Bereich: Datum ---
+        \vfill
+        {\color{gray}\footnotesize \textsc{Datum der Durchführung}\par}
+        \vspace{4pt}
+        {\large \Durchfuehrungsdatum\par}
+        \vspace{1.2cm}
+
+    \end{center}
 \end{titlepage}
