@@ -17,16 +17,6 @@ mhchem (in Präambel: \usepackage[version=4]{mhchem})
     \ce{A ->[T][\Delta] B}      ->  Pfeile mit Bedingungen über/unter dem Pfeil
     \ce{C6H5-NO2}               ->  organische Summenformeln
 
-chemfig (\usepackage{chemfig})
-  Zweidimensionale Strukturformeln:
-    \chemfig{H-C(-[2]OH)(-[4]H)-H}          % Butanol-Skelett
-    \chemfig{*6(=-=-*-)}                    % Benzolring
-    \chemfig{[,0]H_2N-C(=O)-OH}             % gestreckte Darstellung
-  Wichtige Optionen:
-    - Bindungswinkel: \chemfig{A-[1]B}   (0=rechts, 1=45°, 2=oben, ...)
-    - cis/trans-Bindungen: \chemfig{A-[::30]?B}
-    - Substitutionen / Ringe: *6(...), *5(...)
-
 chemmacros (\usepackage{chemmacros}, \usechemmodule{all})
   Einheiten, Prozesse, Reaktionstypen:
     \begin{reaction} A + B -> C \end{reaction}   % nummerierte Reaktionen
@@ -56,7 +46,7 @@ chemfig + TikZ: Destillations-/Reflux-Apparaturen zeichnen.
 3) PHYSIK – Rechnen, Fehlerrechnung, Einheiten
 --------------------------------------------------------------------------------
 
-siunitx (\usepackage{siunitx}) – unentbehrlich!
+siunitx (\usepackage{siunitx})
   \SI{9.81}{\meter\per\square\second}   % Zahl + Einheit korrekt gesetzt
   \si{\kilo\gram\per\cubic\meter}       % reine Einheit
   \SI{3(1)}{\meter}                     % 3±1 direkt in der Klammer!
