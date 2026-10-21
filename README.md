@@ -22,20 +22,6 @@ LaTeX/
     └── Bilder/
 ```
 
-## Wichtig: Protokoll-Regeln der Uni Kassel
-
-Die vollständige Anleitung liegt als `Anleitung-Protokoll.pdf` im Repo-Root;
-die Kernregeln sind in `info.txt` (Abschnitt 7) zusammengefasst. Kurz:
-
-- Aufbau: Deckblatt → Theoretische Grundlagen (max. 2 Seiten) →
-  Experimentelles → Ergebnisse → Zusammenfassung & Diskussion → Anhang
-- Neutrale Erzählperspektive (keine Ich-Form), kurz und prägnant
-- Zu jedem berechneten Wert Fehlerbetrachtung; Fehlerbalken in Plots
-- Wert und Fehler in derselben Einheit und mit derselben Anzahl an
-  Nachkommastellen; Fehler immer aufrunden
-- Literaturwerte nur aus Fachliteratur (keine Internetquellen),
-  ein einheitlicher Zitierstil
-
 ## Die zentrale Praeambel einrichten
 
 Die `Praeambel.tex` liegt im Repo-Root und wird von **jedem** Protokoll
@@ -48,8 +34,8 @@ zentral eingebunden. So richtest du sie ein bzw. verwendest sie:
    \documentclass[11pt, a4paper, headings=small]{scrartcl}
    \input{../Praeambel.tex}   % eine Ebene nach oben zum Repo-Root
    ```
-2. **Neues Protokoll auf gleicher Ebene** (z. B. `03-…/`): derselbe Befehl
-   `\input{../Praeambel.tex}` funktioniert unverändert.
+2. **Neues Protokoll auf gleicher Ebene**: derselbe Befehl
+   `\input{../Praeambel.tex}` legt den Ort des Präambles fest. Dabei bedeutet '../', dass das Präamble in einem Übergeordneten Ordner liegt.
 3. **Eigene Anpassungen:** Paket-Optionen und neue Pakete bitte **nur zentral**
    in `Praeambel.tex` ergänzen (nie in einzelnen Protokollen), damit alle
    Protokelle einheitlich aussehen und es keine Doppel-Ladungen gibt.
@@ -60,7 +46,7 @@ zentral eingebunden. So richtest du sie ein bzw. verwendest sie:
    der Ordner eine Ebene unter dem Repo-Root liegt. Am einfachsten immer
    das komplette Repo klonen und darin arbeiten.
 
-## Enthaltene "Schönheits"-Pakete (Auswahl)
+## Enthaltene "design"-Pakete
 
 | Paket | Zweck |
 |---|---|
@@ -103,7 +89,7 @@ latexmk -pdf protokoll.tex                    # Build wiederholen
 Das Skript nutzt `tlmgr`, wenn verfügbar, sonst `apt` mit den passenden
 `texlive-*`-Paketgruppen. MiKTeX-Nutzer: „Install missing packages
 on-the-fly" in den MiKTeX-Optionen aktivieren, dann passiert es automatisch.
-Einmal alles installieren (ca. 5–7 GB, danach nie wieder nachdenken):
+Einmal alles installieren (ca. 5–7 GB, danach sollte Ruhe sein):
 
 ```bash
 sudo apt install texlive-full

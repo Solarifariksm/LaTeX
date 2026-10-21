@@ -2,7 +2,7 @@
 INFO – Nützliche LaTeX-Pakete & Befehle für Physik- und Chemie-Protokolle
 ================================================================================
 
-DIESE DATEI WIRD LAUFEND ERGÄNZT – fügt gerne selbst Nützliches hinzu!
+fügt gerne selbst Nützliches hinzu!
 
 --------------------------------------------------------------------------------
 1) CHEMIE – Analyse & Darstellung chemischer Verbindungen
@@ -112,7 +112,7 @@ cleveref – \cref{eq:nernst}, \cref{fig:aufbau} – Referenzen mit
 hyperref – klickbare Verweise, [hidelinks] = keine roten Kasten.
 
 --------------------------------------------------------------------------------
-7) PROTOKOLL-REGELN (Uni Kassel F-Praktikum, „Anleitung-Protokoll.pdf")
+7) PROTOKOLL-Vorgaben
 --------------------------------------------------------------------------------
 
 Aufbau (Pflichtteile, exakt in dieser Reihenfolge):
