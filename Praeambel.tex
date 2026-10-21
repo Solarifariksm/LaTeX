@@ -13,7 +13,7 @@
 % Fällt auf lmodern zurück, wenn das Paket nicht installiert ist
 % (Installation bei Bedarf: sudo tlmgr install sourcesanspro bzw. apt install texlive-fonts-extra)
 \IfFileExists{sourcesanspro.sty}{%
-  \usepackage[T1]{sourcesanspro}%
+  \usepackage{sourcesanspro}%
 }{%
   \usepackage{lmodern}%Vektorisierte Standardschrift, scharf auch im PDF
 }
@@ -70,7 +70,7 @@
 \usepackage[version=4]{mhchem} %Chemische Formeln: \ce{H2O}, \ce{2H2 + O2 -> 2H2O}
 \usepackage{chemfig} %Strukturformeln: \chemfig{H-C(-[2]OH)(-[4]H)-H}
 \usepackage{chemmacros} %Reaktionsumgebungen: \begin{reaction} ... \end{reaction}
-\usechemmodule{all}
+\usepackage{chemgreek} %Aufrechte griechische Buchstaben für chemmacros (Unterdrückt die Warnung)
 \usepackage{isotope} %Isotope: \isotope[14]{C}
 
 % ---------- Pakete für Verweise, Zitate und Quellenangaben ----------
