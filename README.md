@@ -22,6 +22,13 @@ LaTeX/
     └── Bilder/
 ```
 
+## Nachdem Änderungen gemacht wurden
+```terminal
+git add -A                     # alle deine Änderungen stagen
+git commit -m "Kapitel Auswertung Versuch 42 ergänzt"   # mit aussagekräftiger Nachricht
+git push                       # auf GitHub hochladen
+```
+
 ## Die zentrale Praeambel einrichten
 
 Die `Praeambel.tex` liegt im Repo-Root und wird von **jedem** Protokoll

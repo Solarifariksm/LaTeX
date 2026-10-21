@@ -9,8 +9,7 @@ Diese Datei einmal lesen, dann läuft der Alltag mit 5 Befehlen.
 3. VS Code Extensions installieren:
    - **LaTeX Workshop** (Build + PDF-Vorschau)
    - **GitLens** (optional, zeigt wer was geändert hat)
-4. TeX Live installieren: `sudo apt install texlive-full` (oder das
-   Skript `install-fehlende-pakete.sh` nutzen, siehe README)
+4. TeX Live installieren: `sudo apt install texlive-full`
 
 ## Neue Protokolle / neue Versuche
 
