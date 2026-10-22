@@ -109,6 +109,42 @@ sudo apt install texlive-full
 - Bilder mit aussagekräftigen Dateinamen in `Bilder/` ablegen.
 - Paket-Vorschläge und nützliche Befehle: in `info.txt` eintragen.
 
+## Auto-Sync: automatisch committen und pullen
+
+Im Repo liegt `git-auto-sync.sh`. Es überwacht das Repo und führt bei
+jeder Dateiänderung automatisch `git add -A && git commit && git pull &&
+git push` aus — ihr müsst im Alltag gar nichts mehr tippen.
+
+```bash
+./git-auto-sync.sh               # Watch-Modus: synchronisiert beim Speichern
+./git-auto-sync.sh --interval 60 # alternativ: alle 60 Sekunden
+./git-auto-sync.sh --once        # genau ein Durchlauf (manuell)
+```
+
+Voraussetzungen: macOS `brew install fswatch`, Linux
+`sudo apt install inotify-tools` (ohne beide: automatischer 60s-Fallback).
+
+**Wichtig:** Bei einem Merge-Konflikt **hält das Skript an** und zerstört
+nichts — es zeigt an, dass ihr von Hand auflösen müsst (Marker in der
+Datei bearbeiten, dann `git add -A && git rebase --continue && git push`),
+und macht erst weiter, wenn das Repo wieder sauber ist. Deshalb ist das
+sicherer als ein blindes Cron-Skript, das Konflikte mit Kraft lösen würde.
+
+Am bequemsten: das Skript beim Login im Hintergrund starten —
+macOS (`launchd`) oder Linux (Systemd-User-Service):
+
+```bash
+# Linux: Unit in ~/.config/systemd/user/latex-autosync.service
+[Service]
+ExecStart=%h/Desktop/LaTeX/git-auto-sync.sh
+[Install]
+WantedBy=default.target
+# dann: systemctl --user enable --now latex-autosync.service
+
+# macOS: launchd-PLIST oder simpel per Autostart-Terminal-Command
+open -a Terminal git-auto-sync.sh   # manuell, oder in Login-Items aufnehmen
+```
+
 ## Fehler "Please clean your repository working tree before checkout" vermeiden
 
 Der Fehler tritt auf, wenn beim Branch-Wechsel/Checkout uncommittete
