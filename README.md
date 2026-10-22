@@ -123,6 +123,21 @@ git push` aus — ihr müsst im Alltag gar nichts mehr tippen.
 
 Voraussetzungen: macOS `brew install fswatch`, Linux
 `sudo apt install inotify-tools` (ohne beide: automatischer 60s-Fallback).
+**Windows 11:** stattdessen `git-auto-sync.ps1` nutzen (PowerShell, keine
+Zusatztools nötig — der Watch-Modus nutzt den eingebauten FileSystemWatcher):
+
+```powershell
+# PowerShell im Repo-Ordner:
+.\git-auto-sync.ps1                        # Watch-Modus
+.\git-auto-sync.ps1 -Interval 60           # alle 60 s
+.\git-auto-sync.ps1 -Once                  # ein Durchlauf
+# falls die Ausfuehrung blockiert wird:
+powershell -ExecutionPolicy Bypass -File .\git-auto-sync.ps1
+```
+
+Für den Windows-Autostart: `Win+R` → `shell:startup` → eine Verknüpfung zu
+diesem Befehl in den Ordner ziehen:
+`powershell -ExecutionPolicy Bypass -File "C:\Pfad\zu\LaTeX\git-auto-sync.ps1"`
 
 **Wichtig:** Bei einem Merge-Konflikt **hält das Skript an** und zerstört
 nichts — es zeigt an, dass ihr von Hand auflösen müsst (Marker in der
