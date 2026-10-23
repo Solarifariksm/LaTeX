@@ -1,0 +1,2 @@
+git status -sb && git fetch origin && git status -sb
+

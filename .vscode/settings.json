@@ -1,6 +1,25 @@
 {
   "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.recipe.default": "latexmk -pdf",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk -pdf",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-cd",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk -pdf",
+      "tools": [
+        "latexmk -pdf"
+      ]
+    }
+  ],
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"
 }
-
