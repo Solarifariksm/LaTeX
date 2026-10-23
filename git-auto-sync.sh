@@ -6,8 +6,8 @@
 #    1. git add -A            alle Änderungen stagen
 #    2. git commit            nur falls es etwas zu committen gibt
 #                             (Nachricht: "Automatischer Stand <Zeit>")
-#    3. git pull              Änderungen der anderen holen (rebase)
-#    4. git push              euer Stand hochladen
+#    3. git fetch + rebase    Änderungen der anderen holen
+#    4. git push              eigenen Stand hochladen
 #
 #  Wann es das tut:
 #    - Standard: bei jeder Dateiänderung (fswatch auf macOS,
@@ -15,9 +15,8 @@
 #    - Alternative: Zeitintervall (--interval SEKUNDEN)
 #
 #  Sicherheit:
-#    - Bei Konflikten hält das Skript an und stellt den Zustand
-#      NICHT kaputt: es bricht den Rebase ab, benachrichtigt und
-#      pausiert, bis ihr von Hand aufgelöst habt.
+#    - Bei Konflikten bleibt der Rebase zur manuellen Auflösung
+#      bestehen. Währenddessen nimmt das Skript keine Änderungen vor.
 #    - LaTeX-Build-Artefakte (.aux, .log, PDFs ...) werden von
 #      .gitignore ignoriert und lösen daher keinen Commit aus.
 #
@@ -35,60 +34,102 @@ cd "$REPO_DIR" || exit 1
 
 INTERVAL=""
 ONCE=0
-for arg in "$@"; do
-    case "$arg" in
-        --interval) INTERVAL="${2:-60}" ; shift ;;
-        [0-9]*) [ -n "${2:-}" ] || INTERVAL="$arg" ;;
-        --once|-1) ONCE=1 ;;
+log() { printf '\033[1;34m[auto-sync]\033[0m %s\n' "$*"; }
+err() { printf '\033[1;31m[auto-sync]\033[0m %s\n' "$*" >&2; }
+
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        --interval)
+            if [ "$#" -lt 2 ]; then
+                err "--interval benötigt eine positive Sekundenanzahl"
+                exit 2
+            fi
+            INTERVAL="$2"
+            shift 2
+            ;;
+        --once|-1)
+            ONCE=1
+            shift
+            ;;
+        *)
+            err "Unbekanntes Argument: $1"
+            exit 2
+            ;;
     esac
 done
 
-log() { printf '\033[1;34m[auto-sync]\033[0m %s\n' "$*"; }
-err() { printf '\033[1;31m[auto-sync]\033[0m %s\n' "$*" >&2; }
+if [ -n "$INTERVAL" ] && ! [[ "$INTERVAL" =~ ^[1-9][0-9]*$ ]]; then
+    err "--interval muss eine positive Sekundenanzahl sein"
+    exit 2
+fi
+if [ "$ONCE" = 1 ] && [ -n "$INTERVAL" ]; then
+    err "--once und --interval können nicht zusammen verwendet werden"
+    exit 2
+fi
 
 # ---------------------------------------------------------------------
 #  Ein Sync-Durchlauf
 # ---------------------------------------------------------------------
 sync_once() {
-    # Nichts zu tun, wenn weder lokale Änderungen noch Remote voraus
-    if ! git diff --quiet --cached && git diff --quiet && \
-       [ -z "$(git ls-files --others --exclude-standard)" ] && \
-       [ "$(git rev-list --count @{upstream}..HEAD 2>/dev/null)" = "0" ]; then
-        return 0
+    local upstream remote remote_branch rebase_merge rebase_apply behind ahead stamp
+
+    rebase_merge="$(git rev-parse --git-path rebase-merge)" || return 1
+    rebase_apply="$(git rev-parse --git-path rebase-apply)" || return 1
+    if [ -d "$rebase_merge" ] || [ -d "$rebase_apply" ]; then
+        err "Ein Rebase ist noch aktiv. Bitte manuell auflösen und mit git rebase --continue abschließen."
+        return 2
     fi
 
+    upstream="$(git rev-parse --abbrev-ref --symbolic-full-name '@{upstream}' 2>/dev/null)" || {
+        err "Kein Upstream-Branch konfiguriert. Bitte zuerst git push -u <remote> <branch> ausführen."
+        return 1
+    }
+    remote="${upstream%%/*}"
+    remote_branch="${upstream#*/}"
+
     # 1) Änderungen stagen und committen (falls vorhanden)
-    if ! git diff --quiet --cached || ! git diff --quiet || \
-       [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        STAMP="$(date '+%Y-%m-%d %H:%M:%S')"
+    if [ -n "$(git status --porcelain)" ]; then
         git add -A || { err "git add fehlgeschlagen"; return 1; }
-        git commit -m "Automatischer Stand ($STAMP)" \
-            --author="auto-sync <auto@sync>" >/dev/null 2>&1 || true
-        log "Änderungen committet ($STAMP)"
+        stamp="$(date '+%Y-%m-%d %H:%M:%S')"
+        if ! git -c user.name=auto-sync -c user.email=auto@sync \
+            commit -m "Automatischer Stand ($stamp)" \
+            --author="auto-sync <auto@sync>" >/dev/null; then
+            err "git commit fehlgeschlagen"
+            return 1
+        fi
+        log "Änderungen committet ($stamp)"
     fi
 
     # 2) Remote-Stand holen und per rebase integrieren
-    if ! git fetch origin; then
+    if ! git fetch "$remote"; then
         err "git fetch fehlgeschlagen (offline?) — überspringe diesen Durchlauf"
         return 1
     fi
-    if [ "$(git rev-list --count HEAD..origin/main 2>/dev/null || echo 0)" -gt 0 ]; then
-        if ! git rebase origin/main; then
+    local counts
+    counts="$(git rev-list --left-right --count "$upstream...HEAD")" || {
+        err "Upstream-Stand konnte nicht ermittelt werden: $upstream"
+        return 1
+    }
+    read -r behind ahead <<< "$counts"
+    if [ "$behind" -gt 0 ]; then
+        if ! git rebase "$upstream"; then
             err "KONFLIKT beim Einbinden der Remote-Änderungen!"
-            err "Der Rebase wurde abgebrochen, nichts ist verloren."
-            err "Bitte von Hand auflösen: Dateien mit <<<<<<<-Markern bearbeiten,"
-            err "dann:  git add -A && git rebase --continue && git push"
+            err "Der Rebase bleibt zur manuellen Auflösung aktiv."
+            err "Dateien mit Konfliktmarkern bearbeiten, dann:"
+            err "  git add -A && git rebase --continue"
             return 2
         fi
         log "Remote-Änderungen integriert"
     fi
 
     # 3) Pushen
-    if ! git push origin main; then
-        err "git push fehlgeschlagen (Netzwerk/Berechtigung?)"
-        return 1
+    if [ "$ahead" -gt 0 ] || [ "$behind" -gt 0 ]; then
+        if ! git push "$remote" "HEAD:$remote_branch"; then
+            err "git push fehlgeschlagen (Netzwerk/Berechtigung?)"
+            return 1
+        fi
     fi
-    log "Synchronisiert mit origin/main"
+    log "Synchronisiert mit $upstream"
     return 0
 }
 

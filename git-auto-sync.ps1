@@ -13,8 +13,8 @@
 #    - Einmal:      .\git-auto-sync.ps1 -Once
 #
 #  Sicherheit:
-#    - Bei Konflikten HAELT das Skript an (rebase wird abgebrochen,
-#      nichts geht verloren) und zeigt die Aufloesungsschritte an.
+#    - Bei Konflikten bleibt der Rebase zur manuellen Aufloesung
+#      bestehen. Waehrenddessen nimmt das Skript keine Aenderungen vor.
 #    - .gitignore filtert Build-Artefakte, PDFs etc. aus.
 #
 #  Start (PowerShell im Repo-Ordner):
@@ -37,63 +37,85 @@ function Write-Log($msg)  { Write-Host "[auto-sync] $msg" -ForegroundColor Cyan 
 function Write-Err($msg)  { Write-Host "[auto-sync] $msg" -ForegroundColor Red }
 
 function Sync-Once {
+    $rebaseMerge = git rev-parse --git-path rebase-merge
+    $rebaseApply = git rev-parse --git-path rebase-apply
+    if ((Test-Path (Join-Path $RepoDir $rebaseMerge)) -or
+        (Test-Path (Join-Path $RepoDir $rebaseApply))) {
+        Write-Err "Ein Rebase ist noch aktiv. Bitte manuell aufloesen und mit git rebase --continue abschliessen."
+        return $false
+    }
+
+    $upstream = git rev-parse --abbrev-ref --symbolic-full-name "@{upstream}" 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $upstream) {
+        Write-Err "Kein Upstream-Branch konfiguriert. Bitte zuerst git push -u <remote> <branch> ausfuehren."
+        return $false
+    }
+    $remote, $remoteBranch = $upstream -split "/", 2
+
     # Gibt es lokale Aenderungen?
     $status = git status --porcelain 2>$null
     $localChanges = ($status | Measure-Object).Count -gt 0
-
-    # Gibt es unausgepushte Commits?
-    $unpushed = 0
-    $revlist = git rev-list --count "@{upstream}..HEAD" 2>$null
-    if ($LASTEXITCODE -eq 0 -and $revlist) { $unpushed = [int]$revlist }
-
-    if (-not $localChanges -and $unpushed -eq 0) { return $true }
 
     # 1) Stagen + Committen (nur wenn noetig)
     if ($localChanges) {
         git add -A
         if ($LASTEXITCODE -ne 0) { Write-Err "git add fehlgeschlagen"; return $false }
         $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-        git commit -m "Automatischer Stand ($stamp)" --author="auto-sync <auto@sync>" *>$null
+        git -c user.name=auto-sync -c user.email=auto@sync commit `
+            -m "Automatischer Stand ($stamp)" --author="auto-sync <auto@sync>" *>$null
+        if ($LASTEXITCODE -ne 0) { Write-Err "git commit fehlgeschlagen"; return $false }
         Write-Log "Aenderungen committet ($stamp)"
     }
 
     # 2) Remote holen und per rebase integrieren
-    git fetch origin
+    git fetch $remote
     if ($LASTEXITCODE -ne 0) {
         Write-Err "git fetch fehlgeschlagen (offline?) - ueberspringe diesen Durchlauf"
         return $false
     }
-    $behind = git rev-list --count "HEAD..origin/main" 2>$null
-    if ($LASTEXITCODE -eq 0 -and $behind -gt 0) {
-        git rebase origin/main
+    $counts = git rev-list --left-right --count "$upstream...HEAD" 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $counts) {
+        Write-Err "Upstream-Stand konnte nicht ermittelt werden: $upstream"
+        return $false
+    }
+    $countParts = @($counts -split '\s+' | Where-Object { $_ -ne "" })
+    if ($countParts.Count -ne 2) {
+        Write-Err "Unerwartete Upstream-Statusantwort: $counts"
+        return $false
+    }
+    $behind = [int]$countParts[0]
+    $ahead = [int]$countParts[1]
+    if ($behind -gt 0) {
+        git rebase $upstream
         if ($LASTEXITCODE -ne 0) {
             Write-Err "KONFLIKT beim Einbinden der Remote-Aenderungen!"
-            git rebase --abort *>$null
-            Write-Err "Der Rebase wurde abgebrochen, nichts ist verloren."
-            Write-Err "Bitte von Hand aufloesen:"
-            Write-Err "  1. Dateien mit <<<<<<<-Markern in VS Code bearbeiten"
-            Write-Err "  2. git add -A"
-            Write-Err "  3. git rebase --continue"
-            Write-Err "  4. git push"
+            Write-Err "Der Rebase bleibt zur manuellen Aufloesung aktiv."
+            Write-Err "Dateien mit Konfliktmarkern bearbeiten, dann:"
+            Write-Err "  git add -A"
+            Write-Err "  git rebase --continue"
             return $false
         }
         Write-Log "Remote-Aenderungen integriert"
     }
 
     # 3) Pushen
-    git push origin main
-    if ($LASTEXITCODE -ne 0) {
-        Write-Err "git push fehlgeschlagen (Netzwerk/Berechtigung?)"
-        return $false
+    if ($ahead -gt 0 -or $behind -gt 0) {
+        git push $remote "HEAD:$remoteBranch"
+        if ($LASTEXITCODE -ne 0) {
+            Write-Err "git push fehlgeschlagen (Netzwerk/Berechtigung?)"
+            return $false
+        }
     }
-    Write-Log "Synchronisiert mit origin/main"
+    Write-Log "Synchronisiert mit $upstream"
     return $true
 }
 
 # ---------------------------------------------------------------------
 #  Trigger-Logik
 # ---------------------------------------------------------------------
-if ($Once) { Sync-Once | Out-Null; exit 0 }
+if ($Once) {
+    if (Sync-Once) { exit 0 } else { exit 1 }
+}
 
 if ($Interval -gt 0) {
     Write-Log "Zeitmodus: synchronisiere alle $Interval s (Strg+C zum Beenden)"
@@ -115,7 +137,7 @@ $watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite -bor
 
 # .git- und Build-Aenderungen ignorieren
 function Test-RelevantPath($path) {
-    if ($path -match '\\\.git\\') { return $false }
+    if ($path -match '(^|[\\/])\.git([\\/]|$)') { return $false }
     if ($path -match '\.(aux|log|out|toc|lof|fls|fdb_latexmk|synctex|bbl|bcf|run\.xml|blg|pdf|synctex\.gz)$') { return $false }
     return $true
 }

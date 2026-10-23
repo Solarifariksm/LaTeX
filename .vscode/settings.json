@@ -21,5 +21,6 @@
     }
   ],
   "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.tab.editorGroup": "right",
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"
 }
