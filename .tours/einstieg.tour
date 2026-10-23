@@ -1,0 +1,54 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Einstieg ins LaTeX-Protokoll-Repository",
+  "steps": [
+    {
+      "title": "Willkommen im Repository",
+      "description": "Hier kann man gemeinsam latex-Protokolle erstellen. Das README erklärt die Ordnerstruktur und enthält weiterführende Hinweise. Die beiden nummerierten Ordner sind eigenständige Protokolle.",
+      "file": "README.md",
+      "line": 1
+    },
+    {
+      "title": "Der Arbeitsablauf",
+      "description": "Vor der Arbeit Änderungen aus dem Team holen (`git pull`), danach Kapitel bearbeiten und Änderungen committen und pushen. Diese Anleitung beschreibt auch Einrichtung, Zusammenarbeit und typische Git-Probleme.",
+      "file": "ARBEIT-ABLAUF.md",
+      "line": 1
+    },
+    {
+      "title": "Gemeinsame Präambel",
+      "description": "Alle Protokolle laden diese zentrale Datei ein. Sie enthält Pakete, Seiteneinstellungen und gemeinsam verwendete LaTeX-Befehle. Änderungen hier wirken sich auf beide Protokolle aus.",
+      "file": "Praeambel.tex",
+      "line": 1
+    },
+    {
+      "title": "Physik: Hauptdatei",
+      "description": "`protokoll.tex` ist der Einstiegspunkt beim Kompilieren. Hier stehen die Versuchsdaten und die Reihenfolge, in der Deckblatt und Kapitel eingebunden werden. Kapiteltexte werden in separaten Dateien gepflegt.",
+      "file": "01-Physik-FPraktikum/protokoll.tex",
+      "line": 1
+    },
+    {
+      "title": "Physik: Kapitel bearbeiten",
+      "description": "Die Dateien in `Inhaltliches/` enthalten jeweils einzelne Abschnitte. Öffne zum Beispiel die Einleitung und ersetze den Mustertext durch den Inhalt des eigenen Versuchs. Die Hauptdatei bindet die Kapitel ein.",
+      "file": "01-Physik-FPraktikum/Inhaltliches/Einleitung.tex",
+      "line": 1
+    },
+    {
+      "title": "Chemie: eigene Kapitelstruktur",
+      "description": "Das Chemie-Protokoll hat eine eigene Hauptdatei und fachlich passende Kapitel, zum Beispiel Ziel und Reaktionsübersicht sowie Mechanismus. Bearbeite die Kapitel unter `Inhaltliches/` und passe die Einbindungen bei Bedarf in der Hauptdatei an.",
+      "file": "02-Synthesechemie/protokoll.tex",
+      "line": 1
+    },
+    {
+      "title": "Quellen pro Protokoll",
+      "description": "Jedes Protokoll verwaltet seine Quellen in einer eigenen `literatur.bib`. Neue Einträge kommen in die Bibliographie des passenden Protokolls; im Text werden sie mit `biblatex` zitiert. Die zentrale Präambel bindet die Bibliographie ein.",
+      "file": "01-Physik-FPraktikum/literatur.bib",
+      "line": 1
+    },
+    {
+      "title": "Kompilieren und Vorschau",
+      "description": "Im jeweiligen Protokollordner lässt sich die PDF mit `latexmk -pdf protokoll.tex` bauen. In VS Code übernimmt LaTeX Workshop den Build und die PDF-Vorschau. Weitere Hinweise zu Build und fehlenden Paketen stehen im README.",
+      "file": "README.md",
+      "line": 79
+    }
+  ]
+}
