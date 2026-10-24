@@ -25,11 +25,12 @@
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"
   "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
   "files.autoSave": "onFocusChange",
-  {
+    {
   "key": "ctrl+enter",
   "command": "latex-workshop.build",
   "when": "editorLangId =~ /latex/"
-  }
+   }
+  "latex-workshop.latex.outDir": "%DIR%/out_dir",
 
 
 
