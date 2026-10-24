@@ -1,4 +1,4 @@
-# Komplett-Neuinstallation (von Null an) — macOS / Windows 11 / Kubuntu
+# Komplett-Neuinstallation — macOS / Windows 11 / Kubuntu
 
 ## Schritt 1: GitHub-Account anlegen
 
