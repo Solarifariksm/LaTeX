@@ -26,6 +26,17 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.view.pdf.tab.editorGroup": "right",
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+{
+  "name": "latexmk -pdf",
+  "command": "latexmk",
+  "args": [
+    "-pdf",
+    "-cd",
+    "-synctex=1",
+    "-outdir=out_dir",
+    "%DOCFILE%"
+  ]
+}
   "latex-workshop.intellisense.package.dirs": [
     // Ordner mit zusätzlichen LaTeX-Paketen (.sty) oder Klassen (.cls),
     // damit Intellisense diese für Autovervollständigung verwendet.
@@ -45,15 +56,4 @@
   "pasteImage.defaultName": "${currentFileNameWithoutExt}-HH-mm-ss",
   "pasteImage.encodePath": "none",
   "pasteImage.basePath": "${currentFileDir}"
-}
-{
-  "name": "latexmk -pdf",
-  "command": "latexmk",
-  "args": [
-    "-pdf",
-    "-cd",
-    "-synctex=1",
-    "-outdir=out_dir",
-    "%DOCFILE%"
-  ]
 }
