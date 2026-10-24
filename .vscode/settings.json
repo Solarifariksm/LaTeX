@@ -33,8 +33,18 @@
   "latex-workshop.latex.outDir": "%DIR%/out_dir",
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
-  
 
+   "latex-workshop.intellisense.package.dirs": [
+    // List any folders that contain additional LaTeX package (.sty) 
+    // or class (.cls) files, so that intellisense will use them 
+    // for auto-complete suggestions.
+    "packages",
+    "%WORKSPACE_FOLDER%/packages"
+  ],
+  "latex-workshop.intellisense.package.extra": [
+    "examplepackage1",
+    "examplepackage2"
+  ]
 
 
 
