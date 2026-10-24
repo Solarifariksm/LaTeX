@@ -136,24 +136,41 @@ auflösen sollst.
   → Bauen immer über die Hauptdatei funktioniert automatisch
 - PDF-Vorschau: Cmd+Klick (macOS) / Strg+Klick (Win/Linux) im PDF ↔ Editor
 
-## Schritt 10: git-auto-sync.sh (für Linux und MacOS) oder git-auto-sync.ps1
+## Schritt 10: automatische Synchronisation (Windows: git-auto-sync.ps1 und MacOS und Linux git-auto-sync.sh)
 
+Windows:
 
-#  1. Win+R druecken, eingeben:  shell:startup   → Enter
-#  2. In dem Ordner: Rechtsklick → Neu → Textdokument
-  3. Umbenennen in:  latex-autosync.vbs  (Endung .vbs, nicht .txt!)
-  4. Rechtsklick → Bearbeiten, folgenden Inhalt einfuegen
-     (Pfad ANPASSEN!):
+1) Win+R druecken (Windows-Taste + R gleichzeitig)
+   -> es oeffnet sich ein kleines Fenster "Ausfuehren"
 
-     Set WshShell = CreateObject("WScript.Shell")
-     WshShell.Run "powershell -ExecutionPolicy Bypass -WindowStyle Hidden -File ""C:\Users\DEINNAME\Desktop\LaTeX\git-auto-sync.ps1""", 0, False
-#
-#  5. Speichern. Ab der naechsten Anmeldung laeuft der Sync unsichtbar
-#     im Hintergrund. Abmelden/neu starten zum Testen.
-#
-#  Log: das Skript schreibt in die PowerShell-Konsole — fuer ein
-#  Datei-Log stattdessen im vbs-File nutzen:
-#     powershell ... -File "...\git-auto-sync.ps1" *>&1 >> "...\autosync.log"
-#
-#  Beenden: Task-Manager → Powershell-Prozess mit git-auto-sync beenden,
-#  oder Autostart-Eintrag aus dem shell:startup-Ordner loeschen.
+2) Eintippen:  shell:startup
+   -> Enter druecken
+   -> Es oeffnet sich ein Ordner. Alles darin startet
+      Windows automatisch bei jeder Anmeldung.
+      Vorhandene Dateien NICHT anfassen!
+
+3) Im Ordner: Rechtsklick auf freie Stelle
+   -> Neu -> Textdokument
+
+4) Umbenennen in:  latex-autosync.vbs
+   WICHTIG: Endung muss .vbs sein, nicht .txt!
+   Falls die Endung nicht geaendert werden kann:
+   Explorer oben auf "Ansicht" -> Haken bei
+   "Dateinamenerweiterungen" setzen.
+
+5) Rechtsklick auf die Datei -> Bearbeiten
+   -> Folgenden Text einfuegen:
+
+   Set WshShell = CreateObject("WScript.Shell")
+   WshShell.Run "powershell -ExecutionPolicy Bypass -WindowStyle Hidden -File ""C:\Users\DEINNAME\Desktop\LaTeX\git-auto-sync.ps1""", 0, False
+
+   WICHTIG: DEINNAME durch den eigenen Windows-Benutzernamen
+   ersetzen! Der Pfad muss genau dorthin zeigen, wo die
+   Datei git-auto-sync.ps1 liegt.
+   (Unsicher? Rechtsklick auf git-auto-sync.ps1 ->
+    "Dateispeicherort oeffnen" -> Pfad oben ablesen.)
+
+6) Speichern (Strg+S) und schliessen.
+
+7) Zum Testen: Abmelden und neu anmelden (oder Neustart).
+   Ab jetzt laeuft der Sync unsichtbar im Hintergrund.
