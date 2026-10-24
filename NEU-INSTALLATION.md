@@ -127,11 +127,60 @@ Sicherheitsfeature: Findet das Skript Konfliktmarker (<<<<<<<) in
 Dateien, committet es NICHT, sondern zeigt an, dass du sie erst von Hand
 auflösen sollst.
 
-## Schritt 9: Editor (empfohlen: TeXstudio, kostenlos)
+## Schritt 9: Editor
+
+### Option A: TeXstudio (klassisch, kostenlos)
 
 - https://www.texstudio.org → Installer für dein OS
 - Erste Zeile jeder Kapitel-Datei enthält bereits `% !TeX root = ../protokoll.tex`
   → Bauen immer über die Hauptdatei funktioniert automatisch
 - PDF-Vorschau: Cmd+Klick (macOS) / Strg+Klick (Win/Linux) im PDF ↔ Editor
 
+### Option B: VS Code (empfohlen, kostenlos)
 
+- https://code.visualstudio.com → Installer für dein OS
+- **Wichtig:** Nach der Installation den Ordner `LaTeX` über
+  *File → Open Folder* öffnen (nicht einzelne Dateien), damit die
+  Repo-Konfiguration in `.vscode/settings.json` geladen wird.
+
+**Sinnvolle Extensions** (in VS Code: `Ctrl+Shift+X` / `Cmd+Shift+X`, dann
+Name suchen → Install):
+
+| Extension | Wofür |
+|---|---|
+| **LaTeX Workshop** (`James-Yu.latex-workshop`) | Pflicht: Build per latexmk, PDF-Vorschau, SyncTeX (Klick-Verknüpfung zwischen PDF und Quelltext), Autocomplete, Fehleranzeige. Wird vom Repo ohnehin vorgeschlagen. |
+| **CodeTour** (`vsls-contrib.codetour`) | Führt Neueinsteiger per geführter Tour durchs Repo (liegt in `.tours/einstieg.tour`). |
+| **LTeX+** (`valentjn.ltex-plus`, optional) | Rechtschreib- und Grammatikprüfung direkt im LaTeX-Quelltext. |
+| **GitLens** (`eamodio.gitlens`, optional) | Zeigt pro Zeile, wer sie zuletzt geändert hat — praktisch bei 3 Personen am selben Protokoll. |
+| **Unicode LaTeX** (`oijazsh.unicode-latex`, optional) | Symbole (α, ×, ° …) tippen und automatisch ins LaTeX-Äquivalent umwandeln lassen. |
+
+Das Repo bringt bereits alles Nötige mit: `.vscode/extensions.json` schlägt die
+Extensions beim ersten Öffnen automatisch vor (einfach auf "Install" klicken),
+und `.vscode/settings.json` konfiguriert latexmk und die PDF-Vorschau.
+
+**Bauen & PDF ansehen:** Beim Speichern baut LaTeX Workshop automatisch das
+PDF (Recipe: `latexmk -pdf`). Das PDF öffnet man mit dem TeX-Symbol links in
+der Seitenleiste → *View PDF file* — es erscheint als Tab auf der rechten
+Seite. Alternativ: `Ctrl+Alt+V` / `Cmd+Option+V`.
+
+**Von PDF-Textstelle zurück in den Quelltext (SyncTeX, inverser Sprung):**
+Im PDF-Tab **Doppelklick** (bzw. `Ctrl+Click`/`Cmd+Click`) auf die Stelle, die
+dich interessiert → VS Code springt automatisch in die passende Zeile der
+passenden `.tex`-Datei. Andersrum geht es auch: `Ctrl+Alt+J` / `Cmd+Option+J`
+im Editor → das PDF springt an die entsprechende Stelle. Voraussetzung ist
+ein Build mit `latexmk` (erzeugt die `.synctex.gz`-Datei) — das macht unsere
+Konfiguration automatisch.
+
+**Immer die gleiche Fensteranordnung:** VS Code speichert das Layout pro
+Workspace automatisch, wenn man es einmal einrichtet:
+
+1. Links Editor, rechts den PDF-Tab ziehen (oder PDF öffnen → das passiert
+   dank `view.pdf.tab.editorGroup: "right"` automatisch rechts).
+2. Zusätzlich empfehlenswert: Explorer-Sidebar links sichtbar lassen und
+   bei Bedarf das Terminal unten öffnen (`Strg+Ö` bzw. `Ctrl+J`).
+3. VS Code mit **File → Exit** (nicht nur das Fenster schließen!) beenden —
+   dann wird das Layout inkl. offener Tabs gespeichert und beim nächsten
+   Öffnen des Ordners exakt wiederhergestellt.
+4. Wer es garantiert deterministisch will: *File → Save Workspace As…*
+   → `protokoll.code-workspace` im Repo-Ordner speichern und künftig immer
+   über diese Datei öffnen.
