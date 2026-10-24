@@ -1,0 +1,162 @@
+# Komplett-Neuinstallation (von Null an) — macOS / Windows 11 / Kubuntu
+
+Für jemanden, der **weder Git noch einen GitHub-Account noch LaTeX** hat.
+Dauer: ca. 45–60 Minuten (mostly Downloads). Am Ende: funktionierendes
+Protokoll-Repo mit Auto-Sync.
+
+---
+
+## Schritt 1: GitHub-Account anlegen (5 Min)
+
+1. https://github.com/signup
+2. E-Mail + Passwort, Verifizierungscode aus dem Postfach eingeben
+3. Kostenlos reicht völlig (Free-Plan)
+
+## Schritt 2: Zugriff aufs Repo erhalten
+
+Der Repo-Besitzer (Solarifariksm) lädt dich ein:
+- GitHub → Repository **Solarifariksm/LaTeX** → **Settings → Collaborators →
+  Add people** → dein GitHub-Name
+- Du bekommst eine Einladungs-E-Mail → **Accept** klicken
+
+## Schritt 3: Git installieren
+
+**macOS:**
+```bash
+xcode-select --install        # kleinen Dialog mit "Installieren" bestätigen
+```
+(auch wenn Xcode nicht installiert wird — der Befehl installiert nur die
+Git-Kommandozeilen-Tools)
+
+**Windows 11:**
+Download https://git-scm.com/download/win → Installer durchklicken,
+alle Standardeinstellungen belassen.
+
+**Kubuntu:**
+```bash
+sudo apt update && sudo apt install git
+```
+
+## Schritt 4: Git einmalig konfigurieren (Name + E-Mail)
+
+```bash
+git config --global user.name "Vorname Nachname"
+git config --global user.email "vorname.nachname@e-mail.de"
+git config --global pull.rebase false   # verhindert Merge-Diskussionen beim pull
+git config --global core.editor "nano"  # einfacher Editor statt Vim
+```
+
+## Schritt 5: Authentifizierung (Token statt Passwort)
+
+GitHub akzeptiert beim Pushen kein Passwort mehr — du brauchst einmalig
+einen **Personal Access Token**:
+
+1. GitHub (im Browser, eingeloggt) → Settings → Developer settings →
+   **Personal access tokens → Tokens (classic) → Generate new token**
+2. Note: z. B. "LaTeX-Protokoll", Häkchen bei **repo**, Rest leer
+3. **Generate token** → Token **sofort kopieren** (nur einmal sichtbar!)
+   und sicher speichern (Passwortmanager o. ä.)
+
+Beim ersten `git push` fragt Git nach Benutzername + Passwort:
+- Benutzername: dein GitHub-Name
+- Passwort: **den Token einfügen** (nicht das GitHub-Passwort!)
+
+**Speichern lassen** (damit du ihn nur einmal tippst):
+```bash
+git config --global credential.helper store
+```
+(macOS: `osxkeychain` ist Standard und speichert im Schlüsselbund;
+Windows: Git für Windows nutzt automatisch den Credential Manager.)
+
+## Schritt 6: LaTeX installieren
+
+**macOS (M1/M2/M3):**
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew install --cask mactex-no-gui     # ~4 GB, enthält ALLES inkl. latexmk+biber
+```
+Terminal danach schließen und neu öffnen.
+
+**Windows 11:**
+- MiKTeX: https://miktex.org/download → Installer
+  → bei der Frage "missing packages" **Always** (automatisch nachinstallieren)
+- Perl für latexmk: https://strawberryperl.com ( latexmk benötigt Perl)
+- Optional stattdessen TeX Live: https://tug.org/texlive (komplett, größer)
+
+**Kubuntu:**
+```bash
+sudo apt install texlive-full latexmk    # ~6 GB, alles inklusive
+# oder klein: texlive-latex-extra texlive-science texlive-pictures texlive-bibtex-extra biber latexmk
+```
+
+**Test:** `pdflatex --version` und `biber --version` und `latexmk --version`
+müssen jeweils eine Version ausgeben.
+
+## Schritt 7: Repo klonen und ersten Build machen
+
+```bash
+cd ~/Desktop                     # Windows: cd %USERPROFILE%\Desktop
+git clone https://github.com/Solarifariksm/LaTeX.git
+cd LaTeX/01-Physik-FPraktikum
+latexmk -pdf protokoll.tex
+```
+→ Es entsteht `protokoll.pdf` mit Deckblatt, Inhaltsverzeichnis,
+Kapiteln und Literaturverzeichnis. **Fertig!**
+
+Falls "File ... not found" kommt: `../install-fehlende-pakete.sh protokoll.log`
+(Linux/macOS) bzw. unter Windows fehlende Pakete in MiKTeX automatisch
+installieren lassen (Settings → "Always install missing packages on the fly").
+
+## Schritt 8: Auto-Sync einrichten (automatisches Committen/Pullen)
+
+Das Skript überwacht das Repo und macht bei jedem Speichern automatisch
+`git add + commit + pull + push`. Einmal pro Rechner einrichten:
+
+**macOS:**
+```bash
+brew install fswatch
+cd ~/Desktop/LaTeX && ./git-auto-sync.sh        # laufen lassen, offen lassen
+```
+
+**Kubuntu:**
+```bash
+sudo apt install inotify-tools
+cd ~/Desktop/LaTeX && ./git-auto-sync.sh
+```
+
+**Windows 11 (PowerShell):**
+```powershell
+cd .\LaTeX
+powershell -ExecutionPolicy Bypass -File .\git-auto-sync.ps1
+```
+
+Sicherheitsfeature: Findet das Skript Konfliktmarker (<<<<<<<) in
+Dateien, committet es NICHT, sondern zeigt an, dass du sie erst von Hand
+auflösen sollst.
+
+## Schritt 9: Editor (empfohlen: TeXstudio, kostenlos)
+
+- https://www.texstudio.org → Installer für dein OS
+- Erste Zeile jeder Kapitel-Datei enthält bereits `% !TeX root = ../protokoll.tex`
+  → Bauen immer über die Hauptdatei funktioniert automatisch
+- PDF-Vorschau: Cmd+Klick (macOS) / Strg+Klick (Win/Linux) im PDF ↔ Editor
+
+## Der Alltag danach (aus ARBEIT-ABLAUF.md)
+
+Mit Auto-Sync: **nur schreiben und speichern** — das Skript erledigt Git.
+Ohne Auto-Sync: **pull → schreiben → commit → push**.
+
+---
+
+## Checkliste zum Abhaken
+
+- [ ] GitHub-Account existsiert
+- [ ] Collaborator-Einladung angenommen
+- [ ] Git installiert + konfiguriert (Name/E-Mail/pull.rebase)
+- [ ] Token erstellt, beim ersten Push eingetragen und gespeichert
+- [ ] LaTeX installiert (`pdflatex`, `biber`, `latexmk` antworten)
+- [ ] Repo geklont, `latexmk -pdf protokoll.tex` baut das PDF
+- [ ] Auto-Sync-Skript läuft
+- [ ] Editor installiert, PDF-Klick-Sync funktioniert
