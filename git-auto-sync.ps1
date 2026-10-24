@@ -45,6 +45,26 @@ function Sync-Once {
         return $false
     }
 
+    # Konfliktmarker in Arbeitsdateien? Dann NICHT committen,
+    # sondern um Hilfe rufen (verhindert, dass Marker ins Repository
+    # und damit ins PDF gelangen).
+    $changedFiles = @(git diff --name-only 2>$null) + @(@((git diff --cached --name-only 2>$null))) + @((git ls-files --others --exclude-standard 2>$null)) | Where-Object { $_ } | Sort-Object -Unique
+    $conflictFiles = @()
+    foreach ($f in $changedFiles) {
+        if ($f -and (Test-Path $f -PathType Leaf)) {
+            $hit = Select-String -Path $f -Pattern '^(<{7}|>{7}|={7})' -List -ErrorAction SilentlyContinue
+            if ($hit) { $conflictFiles += $f }
+        }
+    }
+    if ($conflictFiles.Count -gt 0) {
+        Write-Err "KONFLIKTMARKER in Datei(en) gefunden:"
+        Write-Err ($conflictFiles -join ', ')
+        Write-Err "Nichts wurde committet. Bitte Datei(en) in VS Code/TeXstudio oeffnen,"
+        Write-Err "die <<<<<<<-Bloecke von Hand aufloesen, dann:"
+        Write-Err "  git add -A; git commit -m 'Konflikt geloest'; git push"
+        return $false
+    }
+
     $upstream = git rev-parse --abbrev-ref --symbolic-full-name "@{upstream}" 2>$null
     if ($LASTEXITCODE -ne 0 -or -not $upstream) {
         Write-Err "Kein Upstream-Branch konfiguriert. Bitte zuerst git push -u <remote> <branch> ausfuehren."

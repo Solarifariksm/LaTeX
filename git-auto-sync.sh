@@ -80,6 +80,23 @@ sync_once() {
         return 2
     fi
 
+    # Konfliktmarker in Arbeitsdateien? Dann NICHT committen,
+    # sondern laut um Hilfe rufen (verhindert, dass Marker ins
+    # Repository und damit ins PDF gelangen).
+    local conflict_files
+    conflict_files="$( { git diff --name-only; git diff --cached --name-only; git ls-files --others --exclude-standard; } \
+        | sort -u | while read -r f; do
+            [ -f "$f" ] && grep -lE '^(<{7}|>{7}|={7})' "$f" 2>/dev/null
+        done )"
+    if [ -n "${conflict_files}" ]; then
+        err "KONFLIKTMARKER in Datei(en) gefunden:"
+        err "${conflict_files}"
+        err "Nichts wurde committet. Bitte Datei(en) in VS Code/TeXstudio öffnen,"
+        err "die <<<<<<<-Blöcke von Hand auflösen, dann:"
+        err "  git add -A && git commit -m 'Konflikt gelöst' && git push"
+        return 2
+    fi
+
     upstream="$(git rev-parse --abbrev-ref --symbolic-full-name '@{upstream}' 2>/dev/null)" || {
         err "Kein Upstream-Branch konfiguriert. Bitte zuerst git push -u <remote> <branch> ausführen."
         return 1
