@@ -858,4 +858,1070 @@ File: tikzlibrarygraphs.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.standard.code.tex
 File: tikzlibrarygraphs.standard.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2025/08/14 v1.18.2 Data Visualization 
+Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks56
+\t@pgfplots@tokb=\toks57
+\t@pgfplots@tokc=\toks58
+\pgfplots@tmpa=\dimen343
+\c@pgfplots@coordindex=\count371
+\c@pgfplots@scanlineindex=\count372
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count373
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count374
+\t@pgfplotstable@a=\toks59
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count375
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen344
+\pgfdecoratedremainingdistance=\dimen345
+\pgfdecoratedinputsegmentcompleteddistance=\dimen346
+\pgfdecoratedinputsegmentremainingdistance=\dimen347
+\pgf@decorate@distancetomove=\dimen348
+\pgf@decorate@repeatstate=\count376
+\pgfdecorationsegmentamplitude=\dimen349
+\pgfdecorationsegmentlength=\dimen350
+)
+\tikz@lib@dec@box=\box108
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count377
+\pgfplots@xmin@reg=\dimen351
+\pgfplots@xmax@reg=\dimen352
+\pgfplots@ymin@reg=\dimen353
+\pgfplots@ymax@reg=\dimen354
+\pgfplots@zmin@reg=\dimen355
+\pgfplots@zmax@reg=\dimen356
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/local/texlive/2026/texmf-dist/tex/latex/mhchem/mhchem.sty
+Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count378
+\g__chemgreek_tmpa_int=\count379
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count380
+\__mhchem_arrow_extPgfLength_skip=\skip70
+\mhchem@minispace@tmp=\skip71
+\mhchem@minibackspace@tmp=\skip72
+\mhchem@bondwidth=\skip73
+\mhchem@bondheight=\skip74
+\mhchem@smallbondwidth@tmpA=\skip75
+\mhchem@smallbondwidth@tmpB=\skip76
+\mhchem@smallbondwidth=\skip77
+\mhchem@bondtmp@minussidebearingleft=\skip78
+\mhchem@bondtmp@minussidebearingright=\skip79
+\l__mhchem_option_version_int=\count381
+\mhchem@option@minusmathsidebearingleft=\dimen357
+\mhchem@option@minusmathsidebearingright=\dimen358
+\mhchem@option@minustextsidebearingleft=\dimen359
+\mhchem@option@minustextsidebearingright=\dimen360
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/chemfig/chemfig.sty (/usr/local/texlive/2026/texmf-dist/tex/generic/chemfig/chemfig.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/simplekv/simplekv.tex
+Package: simplekv 2025/06/15 v0.32 Simple keyval package (CT)
+)
+\CF_cnt_atomgroup=\count382
+\CF_cnt_group=\count383
+\CF_cnt_atom=\count384
+\CF_cnt_cycle=\count385
+\CF_cnt_cyclebonds=\count386
+\CF_cnt_compound=\count387
+\CF_dim=\dimen361
+\CF_turnangle=\dimen362
+\CF_arrowsize=\dimen363
+\CF_zero=\dimen364
+\CF_box=\box109
+\CF_boxstuff=\box110
+\CF_testbox=\box111
+\CF_chargebox=\box112
+\CF_substtoks=\toks60
+\CF_harrow_boxup=\box113
+\CF_harrow_boxdown=\box114
+\CF_hreact_cnt=\count388
+)
+Package: chemfig 2025/10/30 v1.71 Draw molecule with an easy syntax (CT)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/chemmacros/chemmacros.sty
+Package: chemmacros 2022/03/11 v6.2a comprehensive support for typesetting chemistry documents (CN & SK)
+\l__chemmacros_tmpa_dim=\dimen365
+\l__chemmacros_tmpb_dim=\dimen366
+\l__chemmacros_tmpc_dim=\dimen367
+\l__chemmacros_tmpa_int=\count389
+\l__chemmacros_tmpb_int=\count390
+\l__chemmacros_tmpc_int=\count391
+\l__chemmacros_tmpa_box=\box115
+\l__chemmacros_tmpb_box=\box116
+\l__chemmacros_tmpc_box=\box117
+Loading the chemmacros module `base' ...
+
+Loading the chemmacros module `base' ...
+Loading the chemmacros module `errorcheck' ...
+Loading the chemmacros module `errorcheck' ...
+Loading the chemmacros module `lang' ...
+Loading the chemmacros module `lang' ...
+Loading the chemmacros module `greek' ...
+Loading the chemmacros module `greek' ...
+Loading the chemmacros module `formula' ...
+Loading the chemmacros module `formula' ...
+Loading the chemmacros module `charges' ...
+Loading the chemmacros module `charges' ...
+Loading the chemmacros module `acid-base' ...
+Loading the chemmacros module `acid-base' ...
+Loading the chemmacros module `symbols' ...
+Loading the chemmacros module `symbols' ...
+Loading the chemmacros module `particles' ...
+Loading the chemmacros module `particles' ...
+\l__chemmacros_nucleophile_dim=\dimen368
+Loading the chemmacros module `phases' ...
+Loading the chemmacros module `phases' ...
+\l__chemmacros_phases_space_dim=\dimen369
+Loading the chemmacros module `nomenclature' ...
+Loading the chemmacros module `nomenclature' ...
+\l__chemmacros_cip_kern_dim=\dimen370
+\l__chemmacros_iupac_hyphen_pre_dim=\dimen371
+\l__chemmacros_iupac_hyphen_post_dim=\dimen372
+\l__chemmacros_iupac_break_dim=\dimen373
+\l__chemmacros_iupac_break_skip=\skip80
+Loading the chemmacros module `tikz' ...
+Loading the chemmacros module `tikz' ...
+\l__chemmacros_el_length_dim=\dimen374
+Loading the chemmacros module `isotopes' ...
+Loading the chemmacros module `isotopes' ...
+(/usr/local/texlive/2026/texmf-dist/tex/latex/elements/elements.sty
+Package: elements 2022/01/29 v0.4 properties of chemical elements
+\c@@elements@orbital@type=\count392
+\c@@elements@shell@number=\count393
+)
+Loading the chemmacros module `mechanisms' ...
+
+Loading the chemmacros module `mechanisms' ...
+Loading the chemmacros module `newman' ...
+Loading the chemmacros module `newman' ...
+Loading the chemmacros module `orbital' ...
+Loading the chemmacros module `orbital' ...
+Loading the chemmacros module `polymers' ...
+Loading the chemmacros module `polymers' ...
+\l__chemmacros_polymer_delimiter_height_dim=\dimen375
+\l__chemmacros_polymer_delimiter_depth_dim=\dimen376
+Loading the chemmacros module `reactions' ...
+Loading the chemmacros module `reactions' ...
+\c@reaction=\count394
+Loading the chemmacros module `redox' ...
+Loading the chemmacros module `redox' ...
+(/usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\l__chemmacros_ox_number_int=\count395
+\l__chemmacros_redox_sep_dim=\dimen377
+\l__chemmacros_redox_sep_default_dim=\dimen378
+\l__chemmacros_redox_dist_dim=\dimen379
+Loading the chemmacros module `xfrac' ...
+
+Loading the chemmacros module `xfrac' ...
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xfrac/xfrac.sty
+Package: xfrac 2024-06-04 Split-level fractions
+\l__xfrac_slash_box=\box118
+\l__xfrac_tmp_box=\box119
+\l__xfrac_denominator_bot_sep_dim=\dimen380
+\l__xfrac_numerator_bot_sep_dim=\dimen381
+\l__xfrac_numerator_top_sep_dim=\dimen382
+\l__xfrac_slash_left_sep_dim=\dimen383
+\l__xfrac_slash_right_sep_dim=\dimen384
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+LaTeX template Info: Declaring template type 'xfrac' taking 3 argument(s) on
+(template)           line 100.
+
+
+LaTeX template Info: Declaring instance 'cmr' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
+
+)
+
+LaTeX template Info: Declaring instance 'chemmacros-frac-cmr-superscript' of
+(template)           type xfrac on line 4683.
+
+
+LaTeX template Info: Declaring instance 'chemmacros-frac-cmr-text' of type
+(template)           xfrac on line 4691.
+
+Loading the chemmacros module `scheme' ...
+
+Loading the chemmacros module `scheme' ...
+(/usr/local/texlive/2026/texmf-dist/tex/latex/chemnum/chemnum.sty
+Package: chemnum 2021/01/21 v1.3a a comprehensive approach for the numbering of chemical compounds (CN)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count396
+\pfg@scount=\count397
+\pfg@temp=\write4
+)
+\l__chemnum_tmpa_int=\count398
+\l__chemnum_tmpb_int=\count399
+\l__chemnum_tmpc_int=\count400
+\c@cmpdmain=\count401
+\g__chemnum_main_int=\count402
+\l__chemnum_compound_replace_int=\count403
+)
+==> First Aid for chemnum.sty applied!
+Loading the chemmacros module `spectroscopy' ...
+Loading the chemmacros module `spectroscopy' ...
+\l__chemmacros_nmr_space_skip=\skip81
+Loading the chemmacros module `thermodynamics' ...
+Loading the chemmacros module `thermodynamics' ...
+Loading the chemmacros module `units' ...
+Loading the chemmacros module `units' ...
+Loading the chemmacros module `reactants' ...
+Loading the chemmacros module `reactants' ...
+Loading the chemmacros module `translations' ...
+Loading the chemmacros module `translations' ...
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count404
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen385
+\Hy@linkcounter=\count405
+\Hy@pagecounter=\count406
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count407
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4072.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count408
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip20
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen386
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count409
+\Field@Width=\dimen387
+\Fld@charsize=\dimen388
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring ON on input line 6102.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count410
+\c@Item=\count411
+\c@Hfootnote=\count412
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+\Fld@listcount=\count413
+\c@bookmark@seq@number=\count414
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip82
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
+==> First Aid for cleveref.sty applied!
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count415
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count416
+\c@listtotal=\count417
+\c@listcount=\count418
+\c@liststart=\count419
+\c@liststop=\count420
+\c@citecount=\count421
+\c@citetotal=\count422
+\c@multicitecount=\count423
+\c@multicitetotal=\count424
+\c@instcount=\count425
+\c@maxnames=\count426
+\c@minnames=\count427
+\c@maxitems=\count428
+\c@minitems=\count429
+\c@citecounter=\count430
+\c@maxcitecounter=\count431
+\c@savedcitecounter=\count432
+\c@uniquelist=\count433
+\c@uniquename=\count434
+\c@refsection=\count435
+\c@refsegment=\count436
+\c@maxextratitle=\count437
+\c@maxextratitleyear=\count438
+\c@maxextraname=\count439
+\c@maxextradate=\count440
+\c@maxextraalpha=\count441
+\c@abbrvpenalty=\count442
+\c@highnamepenalty=\count443
+\c@lownamepenalty=\count444
+\c@maxparens=\count445
+\c@parenlevel=\count446
+\blx@tempcnta=\count447
+\blx@tempcntb=\count448
+\blx@tempcntc=\count449
+\c@blx@maxsection=\count450
+\blx@maxsegment@0=\count451
+\blx@notetype=\count452
+\blx@parenlevel@text=\count453
+\blx@parenlevel@foot=\count454
+\blx@sectionciteorder@0=\count455
+\blx@sectionciteorderinternal@0=\count456
+\blx@entrysetcounter=\count457
+\blx@biblioinstance=\count458
+\labelnumberwidth=\skip83
+\labelalphawidth=\skip84
+\biblabelsep=\skip85
+\bibitemsep=\skip86
+\bibnamesep=\skip87
+\bibinitsep=\skip88
+\bibparsep=\skip89
+\bibhang=\skip90
+\blx@bcfin=\read4
+\blx@bcfout=\write5
+\blx@langwohyphens=\language92
+\c@mincomprange=\count459
+\c@maxcomprange=\count460
+\c@mincompwidth=\count461
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count462
+\c@savedafterword=\count463
+\c@annotator=\count464
+\c@savedannotator=\count465
+\c@author=\count466
+\c@savedauthor=\count467
+\c@bookauthor=\count468
+\c@savedbookauthor=\count469
+\c@commentator=\count470
+\c@savedcommentator=\count471
+\c@editor=\count472
+\c@savededitor=\count473
+\c@editora=\count474
+\c@savededitora=\count475
+\c@editorb=\count476
+\c@savededitorb=\count477
+\c@editorc=\count478
+\c@savededitorc=\count479
+\c@foreword=\count480
+\c@savedforeword=\count481
+\c@holder=\count482
+\c@savedholder=\count483
+\c@introduction=\count484
+\c@savedintroduction=\count485
+\c@namea=\count486
+\c@savednamea=\count487
+\c@nameb=\count488
+\c@savednameb=\count489
+\c@namec=\count490
+\c@savednamec=\count491
+\c@translator=\count492
+\c@savedtranslator=\count493
+\c@shortauthor=\count494
+\c@savedshortauthor=\count495
+\c@shorteditor=\count496
+\c@savedshorteditor=\count497
+\c@labelname=\count498
+\c@savedlabelname=\count499
+\c@institution=\count500
+\c@savedinstitution=\count501
+\c@lista=\count502
+\c@savedlista=\count503
+\c@listb=\count504
+\c@savedlistb=\count505
+\c@listc=\count506
+\c@savedlistc=\count507
+\c@listd=\count508
+\c@savedlistd=\count509
+\c@liste=\count510
+\c@savedliste=\count511
+\c@listf=\count512
+\c@savedlistf=\count513
+\c@location=\count514
+\c@savedlocation=\count515
+\c@organization=\count516
+\c@savedorganization=\count517
+\c@origlocation=\count518
+\c@savedoriglocation=\count519
+\c@origpublisher=\count520
+\c@savedorigpublisher=\count521
+\c@publisher=\count522
+\c@savedpublisher=\count523
+\c@language=\count524
+\c@savedlanguage=\count525
+\c@origlanguage=\count526
+\c@savedoriglanguage=\count527
+\c@pageref=\count528
+\c@savedpageref=\count529
+\shorthandwidth=\skip91
+\shortjournalwidth=\skip92
+\shortserieswidth=\skip93
+\shorttitlewidth=\skip94
+\shortauthorwidth=\skip95
+\shorteditorwidth=\skip96
+\locallabelnumberwidth=\skip97
+\locallabelalphawidth=\skip98
+\localshorthandwidth=\skip99
+\localshortjournalwidth=\skip100
+\localshortserieswidth=\skip101
+\localshorttitlewidth=\skip102
+\localshortauthorwidth=\skip103
+\localshorteditorwidth=\skip104
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count530
+\c@textcitetotal=\count531
+\c@textcitemaxnames=\count532
+\c@biburlbigbreakpenalty=\count533
+\c@biburlbreakpenalty=\count534
+\c@biburlnumpenalty=\count535
+\c@biburlucpenalty=\count536
+\c@biburllcpenalty=\count537
+\biburlbigskip=\muskip21
+\biburlnumskip=\muskip22
+\biburlucskip=\muskip23
+\biburllcskip=\muskip24
+\c@smartand=\count538
+)
+Package biblatex Info: Trying to load bibliography style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.bbx' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+File: authoryear.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count539
+\c@bbx:relatedtotal=\count540
+))
+Package biblatex Info: Trying to load citation style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.cbx' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
+File: authoryear.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2026-01-19 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count541
+\mult@box=\box120
+\multicol@leftmargin=\dimen389
+\c@unbalance=\count542
+\c@collectmore=\count543
+\doublecol@number=\count544
+\multicoltolerance=\count545
+\multicolpretolerance=\count546
+\full@width=\dimen390
+\page@free=\dimen391
+\premulticols=\dimen392
+\postmulticols=\dimen393
+\multicolsep=\skip105
+\multicolbaselineskip=\skip106
+\partial@page=\box121
+\last@line=\box122
+\mc@boxedresult=\box123
+\maxbalancingoverflow=\dimen394
+\mult@rightbox=\box124
+\mult@grightbox=\box125
+\mult@firstbox=\box126
+\mult@gfirstbox=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\@tempa=\box137
+\@tempa=\box138
+\@tempa=\box139
+\@tempa=\box140
+\@tempa=\box141
+\@tempa=\box142
+\@tempa=\box143
+\@tempa=\box144
+\@tempa=\box145
+\@tempa=\box146
+\@tempa=\box147
+\@tempa=\box148
+\@tempa=\box149
+\@tempa=\box150
+\@tempa=\box151
+\@tempa=\box152
+\@tempa=\box153
+\@tempa=\box154
+\@tempa=\box155
+\@tempa=\box156
+\@tempa=\box157
+\@tempa=\box158
+\@tempa=\box159
+\@tempa=\box160
+\@tempa=\box161
+\@tempa=\box162
+\@tempa=\box163
+\c@minrows=\count547
+\c@columnbadness=\count548
+\c@finalcolumnbadness=\count549
+\last@try=\dimen395
+\multicolovershoot=\dimen396
+\multicolundershoot=\dimen397
+\mult@nat@firstbox=\box164
+\colbreak@box=\box165
+\mc@col@check@num=\count550
+\g__mc_curr_col_int=\count551
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip107
+\f@nch@offset@elh=\skip108
+\f@nch@offset@erh=\skip109
+\f@nch@offset@olh=\skip110
+\f@nch@offset@orh=\skip111
+\f@nch@offset@elf=\skip112
+\f@nch@offset@erf=\skip113
+\f@nch@offset@olf=\skip114
+\f@nch@offset@orf=\skip115
+\f@nch@height=\skip116
+\f@nch@footalignment=\skip117
+\f@nch@widthL=\skip118
+\f@nch@widthC=\skip119
+\f@nch@widthR=\skip120
+\@temptokenb=\toks61
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip121
+\thanksmargin=\skip122
+\droptitle=\skip123
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip124
+\enit@outerparindent=\dimen398
+\enit@toks=\toks62
+\enit@inbox=\box166
+\enit@count@id=\count552
+\enitdp@description=\count553
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+\AM@pagewidth=\dimen399
+\AM@pageheight=\dimen400
+\AM@fboxrule=\dimen401
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count554
+\AM@pagebox=\box167
+\AM@global@opts=\toks63
+\AM@pagecnt=\count555
+\AM@toc@title=\toks64
+\AM@lof@heading=\toks65
+\c@AM@survey=\count556
+\AM@templatesizebox=\box168
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write6
+ Excluding comment 'comment') (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count557
+\lst@gtempboxa=\box169
+\lst@token=\toks66
+\lst@length=\count558
+\lst@currlwidth=\dimen402
+\lst@column=\count559
+\lst@pos=\count560
+\lst@lostspace=\dimen403
+\lst@width=\dimen404
+\lst@newlines=\count561
+\lst@lineno=\count562
+\lst@maxwidth=\dimen405
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count563
+\lst@skipnumbers=\count564
+\lst@framebox=\box170
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count565
+Package zref Info: New property: abspage on input line 67.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+)
+\mdf@templength=\skip125
+\c@mdf@globalstyle@cnt=\count566
+\mdf@skipabove@length=\skip126
+\mdf@skipbelow@length=\skip127
+\mdf@leftmargin@length=\skip128
+\mdf@rightmargin@length=\skip129
+\mdf@innerleftmargin@length=\skip130
+\mdf@innerrightmargin@length=\skip131
+\mdf@innertopmargin@length=\skip132
+\mdf@innerbottommargin@length=\skip133
+\mdf@splittopskip@length=\skip134
+\mdf@splitbottomskip@length=\skip135
+\mdf@outermargin@length=\skip136
+\mdf@innermargin@length=\skip137
+\mdf@linewidth@length=\skip138
+\mdf@innerlinewidth@length=\skip139
+\mdf@middlelinewidth@length=\skip140
+\mdf@outerlinewidth@length=\skip141
+\mdf@roundcorner@length=\skip142
+\mdf@footenotedistance@length=\skip143
+\mdf@userdefinedwidth@length=\skip144
+\mdf@needspace@length=\skip145
+\mdf@frametitleaboveskip@length=\skip146
+\mdf@frametitlebelowskip@length=\skip147
+\mdf@frametitlerulewidth@length=\skip148
+\mdf@frametitleleftmargin@length=\skip149
+\mdf@frametitlerightmargin@length=\skip150
+\mdf@shadowsize@length=\skip151
+\mdf@extratopheight@length=\skip152
+\mdf@subtitleabovelinewidth@length=\skip153
+\mdf@subtitlebelowlinewidth@length=\skip154
+\mdf@subtitleaboveskip@length=\skip155
+\mdf@subtitlebelowskip@length=\skip156
+\mdf@subtitleinneraboveskip@length=\skip157
+\mdf@subtitleinnerbelowskip@length=\skip158
+\mdf@subsubtitleabovelinewidth@length=\skip159
+\mdf@subsubtitlebelowlinewidth@length=\skip160
+\mdf@subsubtitleaboveskip@length=\skip161
+\mdf@subsubtitlebelowskip@length=\skip162
+\mdf@subsubtitleinneraboveskip@length=\skip163
+\mdf@subsubtitleinnerbelowskip@length=\skip164
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box171
+\mdf@footnotebox=\box172
+\mdf@splitbox@one=\box173
+\mdf@splitbox@two=\box174
+\mdf@splitbox@save=\box175
+\mdfsplitboxwidth=\skip165
+\mdfsplitboxtotalwidth=\skip166
+\mdfsplitboxheight=\skip167
+\mdfsplitboxdepth=\skip168
+\mdfsplitboxtotalheight=\skip169
+\mdfframetitleboxwidth=\skip170
+\mdfframetitleboxtotalwidth=\skip171
+\mdfframetitleboxheight=\skip172
+\mdfframetitleboxdepth=\skip173
+\mdfframetitleboxtotalheight=\skip174
+\mdffootnoteboxwidth=\skip175
+\mdffootnoteboxtotalwidth=\skip176
+\mdffootnoteboxheight=\skip177
+\mdffootnoteboxdepth=\skip178
+\mdffootnoteboxtotalheight=\skip179
+\mdftotallinewidth=\skip180
+\mdfboundingboxwidth=\skip181
+\mdfboundingboxtotalwidth=\skip182
+\mdfboundingboxheight=\skip183
+\mdfboundingboxdepth=\skip184
+\mdfboundingboxtotalheight=\skip185
+\mdf@freevspace@length=\skip186
+\mdf@horizontalwidthofbox@length=\skip187
+\mdf@verticalmarginwhole@length=\skip188
+\mdf@horizontalspaceofbox=\skip189
+\mdfsubtitleheight=\skip190
+\mdfsubsubtitleheight=\skip191
+\c@mdfcountframes=\count567
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count568
+\c@mdf@env@i=\count569
+\c@mdf@env@ii=\count570
+\c@mdf@zref@counter=\count571
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
+
+Package chemmacros Info: Using float defining method `float'.
+
+\@float@every@scheme=\toks67
+\c@scheme=\count572
+ (./protokoll.aux
+Package babel Info: 'ngerman' activates 'german' shorthands.
+(babel)             Reported on input line 14.
+)
+\openout1 = `protokoll.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 14.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 14.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/ly1/ly1ptm.fd
+File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
+)
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+Package microtype Info: Patching varwidth to enable character protrusion.
+\MT@vwid@leftmargin=\dimen406
+\MT@vwid@rightmargin=\dimen407
+LaTeX Info: Redefining \microtypecontext on input line 14.
+Package microtype Info: Applying patch `item' on input line 14.
+Package microtype Info: Applying patch `toc' on input line 14.
+Package microtype Info: Applying patch `eqnum' on input line 14.
+Package microtype Info: Applying patch `footnote' on input line 14.
+Package microtype Info: Applying patch `verbatim' on input line 14.
+LaTeX Info: Redefining \microtypesetup on input line 14.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Patching command `\showhyphens'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+) (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count573
+\scratchdimen=\dimen408
+\scratchbox=\box176
+\nofMPsegments=\count574
+\nofMParguments=\count575
+\everyMPshowfont=\toks68
+\MPscratchCnt=\count576
+\MPscratchDim=\dimen409
+\MPnumerator=\count577
+\makeMPintoPDFobject=\count578
+\everyMPtoPDFconversion=\toks69
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(113.81102pt, 645.87756pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=645.87756pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-3.50659pt
+* \headheight=15.04742pt
+* \headsep=30.0pt
+* \topskip=12.0pt
+* \footskip=17.50002pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
+File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 14.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+
+Package chemgreek Info: Activating mapping `default' on line 14.
+
+Package hyperref Info: Link coloring ON on input line 14.
+(./protokoll.out) (./protokoll.out)
+\@outlinefile=\write7
+\openout7 = `protokoll.out'.
+
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
+File: ngerman.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `protokoll.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'protokoll.bbl' found.
+ (./protokoll.bbl)
+Package biblatex Info: Reference section=0 on input line 14.
+Package biblatex Info: Reference segment=0 on input line 14.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+\c@lstlisting=\count579
+
+
+Package chemmacros Warning: You haven't loaded any package for upright Greek
+(chemmacros)                letters or no unique choice was possible. Either
+(chemmacros)                load one of packages specified in the manual or
+(chemmacros)                select a chemgreek mapping manually.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/elements/elements_names_german.def) (./Inhaltliches/Titelseite.tex [1
+Non-PDF special ignored!
+<special> header=psfrag.pro
+
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]) (./protokoll.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 4.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/esvect/uesvect.fd
+File: uesvect.fd 
+))
+\tf@toc=\write8
+\openout8 = `protokoll.toc'.
+
+ [1] (./protokoll.lof)
+\tf@lof=\write9
+\openout9 = `protokoll.lof'.
+
+ [2] (./Inhaltliches/Einleitung.tex) (./Inhaltliches/Grundlagen.tex Excluding 'comment' comment.)
+Package babel Info: 'ngerman' activates 'german' shorthands.
+(babel)             Reported on input line 38.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 \newpage
+              [1
+
+] (./Inhaltliches/Versuchsdurchfuehrung.tex) [2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./Inhaltliches/Auswertung.tex Excluding 'comment' comment.
+Overfull \hbox (0.86664pt too wide) in paragraph at lines 20--33
+\T1/cmr/m/n/12 (-20) Messwerte ta-bel-liert; si-gni-fi-kan-te Stel-len ori-en-tie-ren sich an dem niedrigst-signifikanten
+ []
+
+[3]) [4] (./Inhaltliches/Diskussion.tex) (./Inhaltliches/Zusammenfassung.tex) [5] (./Inhaltliches/Anhang.tex
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 16.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+) [6] (./protokoll.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package rerunfilecheck Info: File `protokoll.out' has not changed.
+(rerunfilecheck)             Checksum: 8D7C6B6ABEE9C89A5881FF8CDCE7DEA1;2126.
+Package logreq Info: Writing requests to 'protokoll.run.xml'.
+\openout1 = `protokoll.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 65404 strings out of 467525
+ 1495319 string characters out of 5418981
+ 2533021 words of memory out of 5000000
+ 93200 multiletter control sequences out of 15000+600000
+ 651259 words of font info for 145 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 89i,20n,120p,1229b,2618s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
+Output written on protokoll.pdf (9 pages, 312824 bytes).
+PDF statistics:
+ 290 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 46237 words of extra memory for PDF output out of 51595 (max. 10000000)
+
