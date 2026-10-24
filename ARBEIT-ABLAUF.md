@@ -36,15 +36,11 @@ Dann: in VS Code die `.tex`-Datei öffnen und schreiben. Build/Vorschau:
 - `Strg+Alt+B` = kompilieren (latexmk)
 - `Strg+Alt+V` = PDF-Vorschau daneben
 
-<<<<<<< Updated upstream
-=======
 In der PDF-Vorschau springt ein Doppelklick auf eine Stelle zur passenden
 Position im LaTeX-Quellcode (SyncTeX). Dazu muss die PDF in VS Code mit
 LaTeX Workshop gebaut und im internen PDF-Viewer geöffnet werden. Änderungen
 an der `.tex`-Datei bauen das Dokument automatisch neu; die offene PDF-Vorschau
 wird nach erfolgreichem Build aktualisiert.
-
->>>>>>> Stashed changes
 Am Ende der Sitzung — **immer als Letztes**:
 
 ```bash
