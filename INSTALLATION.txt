@@ -4,13 +4,14 @@
 
 1. https://github.com/signup
 2. E-Mail + Passwort, Verifizierungscode aus dem Postfach eingeben
-3. Kostenlos reicht völlig (Free-Plan)
+3. Kostenlos reicht
 
 ## Schritt 2: Zugriff aufs Repo erhalten
 
 - Hast eine Einladungs-E-Mail bekommen → **Accept** klicken
 
 ## Schritt 3: Git installieren
+Wenn ihr das im Terminal installieren wollt, dann nutzt die Befehle 
 
 **macOS:**
 ```bash
