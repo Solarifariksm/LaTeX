@@ -31,8 +31,8 @@
   "when": "editorLangId =~ /latex/"
    }
   "latex-workshop.latex.outDir": "%DIR%/out_dir",
-
-
+  "latex-workshop.view.pdf.viewer": "tab",
+  
 
 
 
