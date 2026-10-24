@@ -134,20 +134,4 @@ auflösen sollst.
   → Bauen immer über die Hauptdatei funktioniert automatisch
 - PDF-Vorschau: Cmd+Klick (macOS) / Strg+Klick (Win/Linux) im PDF ↔ Editor
 
-## Der Alltag danach (aus ARBEIT-ABLAUF.md)
 
-Mit Auto-Sync: **nur schreiben und speichern** — das Skript erledigt Git.
-Ohne Auto-Sync: **pull → schreiben → commit → push**.
-
----
-
-## Checkliste zum Abhaken
-
-- [ ] GitHub-Account existsiert
-- [ ] Collaborator-Einladung angenommen
-- [ ] Git installiert + konfiguriert (Name/E-Mail/pull.rebase)
-- [ ] Token erstellt, beim ersten Push eingetragen und gespeichert
-- [ ] LaTeX installiert (`pdflatex`, `biber`, `latexmk` antworten)
-- [ ] Repo geklont, `latexmk -pdf protokoll.tex` baut das PDF
-- [ ] Auto-Sync-Skript läuft
-- [ ] Editor installiert, PDF-Klick-Sync funktioniert
