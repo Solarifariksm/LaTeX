@@ -138,7 +138,7 @@ auflösen sollst.
 
 ## Schritt 10: automatische Synchronisation (Windows: git-auto-sync.ps1 und MacOS und Linux git-auto-sync.sh)
 
-Windows:
+--Windows--
 
 1) Win+R druecken (Windows-Taste + R gleichzeitig)
    -> es oeffnet sich ein kleines Fenster "Ausfuehren"
@@ -174,3 +174,39 @@ Windows:
 
 7) Zum Testen: Abmelden und neu anmelden (oder Neustart).
    Ab jetzt laeuft der Sync unsichtbar im Hintergrund.
+
+
+--- LINUX (mit Desktop, z.B. GNOME/Ubuntu) ---
+
+1) Datei anlegen:
+   ~/.config/autostart/git-autosync.desktop
+
+2) Inhalt (Pfad anpassen!):
+
+   [Desktop Entry]
+   Type=Application
+   Name=LaTeX Auto-Sync
+   Exec=/home/DEINNAME/LaTeX/git-auto-sync.sh
+   Terminal=false
+   X-GNOME-Autostart-enabled=true
+
+3) Speichern, neu anmelden -> laeuft automatisch.
+
+Beenden: Datei einfach loeschen.
+Hinweis: Funktioniert nur bei Desktop-Anmeldung, nicht
+bei reinem Terminal-Server ohne grafische Oberflaeche.
+
+-------------------------------------------------------
+--- MACOS ---
+
+1) Skript ausfuehrbar machen (im Terminal):
+   chmod +x /Users/DEINNAME/LaTeX/git-auto-sync.sh
+
+2) Systemeinstellungen -> Bedienungshilfen ->
+   Anmeldeobjekte -> "+" -> git-auto-sync.sh auswaehlen.
+
+   (aeltere macOS-Versionen: "Benutzer & Gruppen" ->
+    "Anmeldeobjekte")
+
+3) Neu anmelden -> laeuft automatisch.
+
