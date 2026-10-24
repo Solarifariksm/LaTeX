@@ -136,4 +136,6 @@ auflösen sollst.
   → Bauen immer über die Hauptdatei funktioniert automatisch
 - PDF-Vorschau: Cmd+Klick (macOS) / Strg+Klick (Win/Linux) im PDF ↔ Editor
 
+## Schritt 10: git-auto-sync.sh (für Linux und MacOS) oder git-auto-sync.ps1
+
 
