@@ -1,0 +1,57 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{Example2023}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ffb765e32262fc4771dc5f8faba16da1}{%
+           family={Musterfrau},
+           familyi={M\bibinitperiod},
+           given={Erika},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{fullhash}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{fullhashraw}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{bibnamehash}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{authorbibnamehash}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{authornamehash}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{authorfullhash}{ffb765e32262fc4771dc5f8faba16da1}
+      \strng{authorfullhashraw}{ffb765e32262fc4771dc5f8faba16da1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Einführung in die Experimentierkunst}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

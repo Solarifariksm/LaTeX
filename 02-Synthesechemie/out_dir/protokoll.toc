@@ -1,0 +1,22 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Ziel und Reaktionsübersicht}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Reaktionsgleichung}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Stöchiometrie}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Eigenschaften der Zielverbindung}{1}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Mechanismus}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Schritt 1: Protonierung}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Schritt 2: Nucleophiler Angriff}{1}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Schritt 3: Deprotonierung}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Durchführung}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Apparatur}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Reaktionsdurchführung}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Aufreinigung}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Sicherheit}{3}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Ergebnisse}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ausbeute}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Identifikation und Reinheit}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}NMR-Daten (Auszug)}{4}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Diskussion}{5}{section.5}%
+\contentsline {section}{\numberline {6}Anhang}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Messprotokoll}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Spektren}{6}{subsection.6.2}%
