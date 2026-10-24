@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- =====================================================================
+  LaunchAgent für git-auto-sync.sh (macOS)
+  Legt dieses Skript ab unter:
+    ~/Library/LaunchAgents/com.latex.autosync.plist
+  UND passe unten den Pfad REPO_DIR an deinen echten Repo-Pfad an!
+  Dann aktivieren:
+    launchctl load ~/Library/LaunchAgents/com.latex.autosync.plist
+  Deaktivieren:
+    launchctl unload ~/Library/LaunchAgents/com.latex.autosync.plist
+  Log einsehen:
+    tail -f ~/Desktop/LaTeX/autosync.log
+===================================================================== -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.latex.autosync</string>
+
+    <!-- ANPASSEN: absoluter Pfad zum Repo -->
+    <key>WorkingDirectory</key>
+    <string>/Users/Jonathan/Desktop/LaTeX</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <!-- ANPASSEN: absoluter Pfad zum Skript -->
+        <string>/Users/Jonathan/Desktop/LaTeX/git-auto-sync.sh</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- Log-Ausgaben -->
+    <key>StandardOutPath</key>
+    <string>/Users/Jonathan/Desktop/LaTeX/autosync.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/Jonathan/Desktop/LaTeX/autosync.log</string>
+</dict>
+</plist>
