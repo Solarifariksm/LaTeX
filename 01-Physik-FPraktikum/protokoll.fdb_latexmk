@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber protokoll"] 1792852736.01836 "protokoll.bcf" "protokoll.bbl" "protokoll" 1792863308.94275 0
+["biber protokoll"] 1792852736.01836 "protokoll.bcf" "protokoll.bbl" "protokoll" 1792864962.75973 0
   "literatur.bib" 1792603371.7292 229 1cd13b0e9558fd4be1573bd7809149be ""
-  "protokoll.bcf" 1792863308.76317 108667 b27f81d80dbc97e364689ad26d3aec18 "pdflatex"
+  "protokoll.bcf" 1792864962.5859 108667 b27f81d80dbc97e364689ad26d3aec18 "pdflatex"
   (generated)
   "protokoll.bbl"
   "protokoll.blg"
   (rewritten before read)
-["pdflatex"] 1792863306.61635 "protokoll.tex" "protokoll.pdf" "protokoll" 1792863308.94302 0
+["pdflatex"] 1792864960.42046 "protokoll.tex" "protokoll.pdf" "protokoll" 1792864962.76002 0
   "../Praeambel.tex" 1792745815.83902 6370 76ce5fe4e3f6abdcc872bc7c9fdfb02f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -369,18 +369,18 @@
   "Inhaltliches/Anhang.tex" 1792861074.13905 866 6c32f055db918a132fbfb02684d527d7 ""
   "Inhaltliches/Auswertung.tex" 1792863263.26782 2671 e741cee98bbe049b6489b74fd0b59b93 ""
   "Inhaltliches/Diskussion.tex" 1792859549.61111 1094 b9265f2b071d6196907a1ddc64b4c304 ""
-  "Inhaltliches/Einleitung.tex" 1792863306.31224 174 4d661f4e758d64b91f1f454ce7c8f1a2 ""
+  "Inhaltliches/Einleitung.tex" 1792864960.11728 79 4f1b7fb5179841ef48bc30e3549f01b8 ""
   "Inhaltliches/Grundlagen.tex" 1792858479.62583 1809 64708ac5a9524ce9b30b4e5eb8602974 ""
   "Inhaltliches/Titelseite.tex" 1792858524.66702 1608 ac99825f0a8f2be3698d66b0589e5868 ""
   "Inhaltliches/Versuchsdurchfuehrung.tex" 1792858528.15865 1818 45281cbd63249f87021219aede106f0e ""
   "Inhaltliches/Zusammenfassung.tex" 1792858533.05283 474 92e74c78ee9f9ea097d9fd1c21fa2a6b ""
-  "protokoll.aux" 1792863308.75872 7504 7ff9e85f3ac67efbcae4c2f4a7dbf670 "pdflatex"
+  "protokoll.aux" 1792864962.58159 7504 7ff9e85f3ac67efbcae4c2f4a7dbf670 "pdflatex"
   "protokoll.bbl" 1792852736.83311 1797 970ffc1fb604e2b5a64654112d034d78 "biber protokoll"
-  "protokoll.lof" 1792863308.76399 350 2638b17b4865ebf953593ab31b5d10fe "pdflatex"
-  "protokoll.out" 1792863308.76055 2126 8d7c6b6abee9c89a5881ff8cdce7dea1 "pdflatex"
-  "protokoll.run.xml" 1792863308.7639 2375 e0293fda9166a9c6fdde44e5691cc363 "pdflatex"
+  "protokoll.lof" 1792864962.5867 350 2638b17b4865ebf953593ab31b5d10fe "pdflatex"
+  "protokoll.out" 1792864962.58337 2126 8d7c6b6abee9c89a5881ff8cdce7dea1 "pdflatex"
+  "protokoll.run.xml" 1792864962.58662 2375 e0293fda9166a9c6fdde44e5691cc363 "pdflatex"
   "protokoll.tex" 1792844657.80709 2309 bcd25c5afd754e243d6bec9a7cc91b70 ""
-  "protokoll.toc" 1792863308.76396 1378 5b59cd62a3480473104b05ccf1403f23 "pdflatex"
+  "protokoll.toc" 1792864962.58668 1378 5b59cd62a3480473104b05ccf1403f23 "pdflatex"
   (generated)
   "protokoll.aux"
   "protokoll.bcf"
