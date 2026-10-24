@@ -139,3 +139,21 @@ auflösen sollst.
 ## Schritt 10: git-auto-sync.sh (für Linux und MacOS) oder git-auto-sync.ps1
 
 
+#  1. Win+R druecken, eingeben:  shell:startup   → Enter
+#  2. In dem Ordner: Rechtsklick → Neu → Textdokument
+  3. Umbenennen in:  latex-autosync.vbs  (Endung .vbs, nicht .txt!)
+  4. Rechtsklick → Bearbeiten, folgenden Inhalt einfuegen
+     (Pfad ANPASSEN!):
+
+     Set WshShell = CreateObject("WScript.Shell")
+     WshShell.Run "powershell -ExecutionPolicy Bypass -WindowStyle Hidden -File ""C:\Users\DEINNAME\Desktop\LaTeX\git-auto-sync.ps1""", 0, False
+#
+#  5. Speichern. Ab der naechsten Anmeldung laeuft der Sync unsichtbar
+#     im Hintergrund. Abmelden/neu starten zum Testen.
+#
+#  Log: das Skript schreibt in die PowerShell-Konsole — fuer ein
+#  Datei-Log stattdessen im vbs-File nutzen:
+#     powershell ... -File "...\git-auto-sync.ps1" *>&1 >> "...\autosync.log"
+#
+#  Beenden: Task-Manager → Powershell-Prozess mit git-auto-sync beenden,
+#  oder Autostart-Eintrag aus dem shell:startup-Ordner loeschen.
