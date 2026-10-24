@@ -8,6 +8,7 @@
       "args": [
         "-pdf",
         "-cd",
+        "-synctex=1",
         "%DOCFILE%"
       ]
     }
@@ -24,7 +25,7 @@
   "latex-workshop.latex.outDir": "%DIR%/out_dir",
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.view.pdf.tab.editorGroup": "right",
-  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click" "args": ["-pdf", "-cd", "-synctex=1", "%DOCFILE%"],
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
   "latex-workshop.intellisense.package.dirs": [
     // Ordner mit zusätzlichen LaTeX-Paketen (.sty) oder Klassen (.cls),
     // damit Intellisense diese für Autovervollständigung verwendet.
