@@ -45,6 +45,7 @@
     "examplepackage1",
     "examplepackage2"
   ]
+  "latex-workshop.intellisense.update.aggressive.enabled": true,
 
 
 
