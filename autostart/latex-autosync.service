@@ -1,0 +1,30 @@
+# =====================================================================
+#  systemd-User-Service für git-auto-sync.sh (Linux/Kubuntu)
+#
+#  Installation:
+#    mkdir -p ~/.config/systemd/user
+#    cp autostart/latex-autosync.service ~/.config/systemd/user/
+#    # Pfad unten ggf. anpassen!
+#    systemctl --user daemon-reload
+#    systemctl --user enable --now latex-autosync.service
+#
+#  Steuerung:
+#    systemctl --user status  latex-autosync   # läuft es?
+#    systemctl --user stop    latex-autosync   # stoppen
+#    systemctl --user disable latex-autosync   # Autostart aus
+#    journalctl --user -u latex-autosync -f    # Log live ansehen
+# =====================================================================
+[Unit]
+Description=Git Auto-Sync fuer LaTeX-Protokoll-Repo
+After=network-online.target
+
+[Service]
+Type=simple
+# ANPASSEN: dein Repo-Pfad (aus $HOME wird /home/deinname)
+WorkingDirectory=%h/Desktop/LaTeX
+ExecStart=%h/Desktop/LaTeX/git-auto-sync.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

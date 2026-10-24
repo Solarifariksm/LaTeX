@@ -330,3 +330,9 @@ TSWLatexianTemp*
 ## Build-Output der Protokolle (nicht einchecken):
 *.pdf
 !Anleitung-Protokoll.pdf
+
+# macOS-/Editor-Wust nicht einchecken:
+.DS_Store
+out_dir/
+Zwischenablage*.txt
+*.tex.backup
