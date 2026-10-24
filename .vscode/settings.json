@@ -46,7 +46,27 @@
     "examplepackage2"
   ]
   "latex-workshop.intellisense.update.aggressive.enabled": true,
-
+...
+// Where to place the files for pasted images.
+"pasteImage.path": "${currentFileDir}/pasted-images",
+// The code to insert into LaTeX. (Since the images are placed in 
+// a directory named pasted-images/ that is in the same directory 
+// as the current TeX file, the relative path to the file is 
+// pasted-images/${imageFileName}.)
+"pasteImage.insertPattern": 
+  "\\begin{center}\n\t\t\\includegraphics[width=\\linewidth]{pasted-images/${imageFileName}}\n\t\\end{center}",
+// Make Paste Images ask you what to name the file so you don't 
+// end up with a bunch of files named things like "12-03-2024-12-44-23.png"
+"pasteImage.showFilePathConfirmInputBox": true,
+// Only ask for the name of the created file, instead of the full path.
+"pasteImage.filePathConfirmInputBoxMode": "onlyName",
+// Default name.
+"pasteImage.defaultName": "${currentFileNameWithoutExt}-HH-mm-ss",
+// Don't encode the path for HTML. 
+"pasteImage.encodePath": "none",
+// I don't remember what this does 
+"pasteImage.basePath": "${currentFileDir}",
+...
 
 
 }
