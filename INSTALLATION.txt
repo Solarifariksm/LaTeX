@@ -11,7 +11,7 @@
 - Hast eine Einladungs-E-Mail bekommen → **Accept** klicken
 
 ## Schritt 3: Git installieren
-Wenn ihr das im Terminal installieren wollt, dann nutzt die Befehle 
+Wenn ihr das im Terminal installieren wollt, dann nutzt die Befehle immer ohne diese -> ´
 
 **macOS:**
 ```bash
@@ -131,6 +131,7 @@ auflösen sollst.
 ## Schritt 9: Editor (empfohlen: TeXstudio, kostenlos)
 
 - https://www.texstudio.org → Installer für dein OS
+-VS-Code (meine Empfehlung) dafür aber 
 - Erste Zeile jeder Kapitel-Datei enthält bereits `% !TeX root = ../protokoll.tex`
   → Bauen immer über die Hauptdatei funktioniert automatisch
 - PDF-Vorschau: Cmd+Klick (macOS) / Strg+Klick (Win/Linux) im PDF ↔ Editor
