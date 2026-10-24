@@ -1,6 +1,6 @@
 # Komplett-Neuinstallation (von Null an) — macOS / Windows 11 / Kubuntu
 
-## Schritt 1: GitHub-Account anlegen (5 Min)
+## Schritt 1: GitHub-Account anlegen
 
 1. https://github.com/signup
 2. E-Mail + Passwort, Verifizierungscode aus dem Postfach eingeben
