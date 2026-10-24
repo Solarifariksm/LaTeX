@@ -24,6 +24,7 @@
   "latex-workshop.view.pdf.tab.editorGroup": "right",
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"
   "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+  "files.autoSave": "onFocusChange",
   
 
 
