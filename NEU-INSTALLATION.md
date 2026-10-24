@@ -1,11 +1,5 @@
 # Komplett-Neuinstallation (von Null an) — macOS / Windows 11 / Kubuntu
 
-Für jemanden, der **weder Git noch einen GitHub-Account noch LaTeX** hat.
-Dauer: ca. 45–60 Minuten (mostly Downloads). Am Ende: funktionierendes
-Protokoll-Repo mit Auto-Sync.
-
----
-
 ## Schritt 1: GitHub-Account anlegen (5 Min)
 
 1. https://github.com/signup
@@ -14,10 +8,7 @@ Protokoll-Repo mit Auto-Sync.
 
 ## Schritt 2: Zugriff aufs Repo erhalten
 
-Der Repo-Besitzer (Solarifariksm) lädt dich ein:
-- GitHub → Repository **Solarifariksm/LaTeX** → **Settings → Collaborators →
-  Add people** → dein GitHub-Name
-- Du bekommst eine Einladungs-E-Mail → **Accept** klicken
+- Hast eine Einladungs-E-Mail bekommen → **Accept** klicken
 
 ## Schritt 3: Git installieren
 
@@ -43,7 +34,6 @@ sudo apt update && sudo apt install git
 git config --global user.name "Vorname Nachname"
 git config --global user.email "vorname.nachname@e-mail.de"
 git config --global pull.rebase false   # verhindert Merge-Diskussionen beim pull
-git config --global core.editor "nano"  # einfacher Editor statt Vim
 ```
 
 ## Schritt 5: Authentifizierung (Token statt Passwort)
@@ -51,7 +41,7 @@ git config --global core.editor "nano"  # einfacher Editor statt Vim
 GitHub akzeptiert beim Pushen kein Passwort mehr — du brauchst einmalig
 einen **Personal Access Token**:
 
-1. GitHub (im Browser, eingeloggt) → Settings → Developer settings →
+1. GitHub (im Browser, eingeloggt) → Settings → Developer settings (meistens F12) →
    **Personal access tokens → Tokens (classic) → Generate new token**
 2. Note: z. B. "LaTeX-Protokoll", Häkchen bei **repo**, Rest leer
 3. **Generate token** → Token **sofort kopieren** (nur einmal sichtbar!)
@@ -97,7 +87,8 @@ müssen jeweils eine Version ausgeben.
 ## Schritt 7: Repo klonen und ersten Build machen
 
 ```bash
-cd ~/Desktop                     # Windows: cd %USERPROFILE%\Desktop
+cd ~/Desktop                     
+# Windows: cd %USERPROFILE%\Desktop
 git clone https://github.com/Solarifariksm/LaTeX.git
 cd LaTeX/01-Physik-FPraktikum
 latexmk -pdf protokoll.tex
